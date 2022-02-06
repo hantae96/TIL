@@ -20,3 +20,6 @@ for i in range (1,n+1):
     for j in range(1,n+1):
         # all 안에 있는 모든 조건이 참일 때 참!!
         if all(a[i][j]>a[i+dx[k][j+dy[k]]] for k in range(4))
+        cnt+=1
+        
+print(cnt)
