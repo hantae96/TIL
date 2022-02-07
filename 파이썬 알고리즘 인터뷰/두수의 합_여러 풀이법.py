@@ -36,6 +36,7 @@ twoSum_dic(nums,target)
 
 nums = [2,7,11,15]
 
+
 def two_sum_pointer(nums,target):
     left = 0
     right = len(nums)-1
