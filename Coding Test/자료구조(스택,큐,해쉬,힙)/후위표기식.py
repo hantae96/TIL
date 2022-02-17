@@ -1,53 +1,31 @@
-ex = "3+5*2/(7-2)"
-
-inorder = []
-for i in ex:
-    inorder.append(i)
-    
+a = "3*(5+2)-9"
 stack = []
-prop = []
-post = []
+res =""
 
-neworder = []
-
-for i in range(len(inorder)):
-    if inorder[i] == "(":
-        j=i+1
-        while inorder[j] != ")":
-            prop.append(inorder[j])
-            j+=1
-    
-for i in range(len(prop)):
-    if prop[i].isdigit():
-        neworder.append(prop[i])
+for x in a:
+    if x.isdigit():
+        res+=x
     else:
-        stack.append(prop[i])
-
-# 우선순위 inorder 만듬
-inorder = inorder[:-(len(prop)+2)] + (neworder + stack)
-
-print(inorder)
-# 스택 초기화
-stack.clear()
-
-for i in range(len(inorder)):
-    if inorder[i].isdigit():
-        post.append(inorder[i])
-    else:
-        if len(stack) == 0:
-            stack.append(inorder[i])
-        else:
-            if inorder[i] == ("*" or "/"):
+        if x =="(":
+            stack.append(x)
+        elif x == "*" or x== "/":
+            # 안에 * 나 /를 다 빼내고
+            while stack and (stack[-1]=="*" or stack[-1]=="/"):
+                res+=stack.pop()
+            # 그 뒤에 추가
+            stack.append(x)
+        elif x== "+" or x=="-":
+            # 여는 괄호 전까지만 
+            while stack and stack[-1]!= "(":
+                res+=stack.pop()
+            stack.append(x)
+        elif x==")":
+            while stack and stack[-1]!="(":
+                # 여는 괄호 제거
+                res+=stack.pop()
+            stack.pop()
                 
-                if stack[-1] == ("*" or "/"):
-                    
-                    tmp=stack.pop()
-                    print(f"{tmp}템프")
-                    post.append(tmp)
-                    stack.append(inorder[i])
-                else:
-                    stack.append(inorder[i])
-            else:
-                stack.append(inorder[i])
-post=post + stack
-print(post)
+while stack:
+    res+=stack.pop()
+    
+print(res)
