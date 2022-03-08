@@ -14,11 +14,14 @@ while dq:
         # 제일 뒤로 들어감
         dq.append(cur)
     #3번째 사람을 pop
+     
     dq.popleft()
     if len(dq)== 1:
         print(dq[0])
         dq.popleft()
         
 
-        
+
+
+
         
