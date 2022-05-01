@@ -1,38 +1,36 @@
-k = 4
-N = 11
+N,M = 9,3
+Music = [1,2,3,4,5,6,7,8,9]
 
-LAN_length = [802,743,457,539]
-
-tmp = 1
-
-dic1={}
-dic2={}
-dic3={}
-dic4={}
-
-for i in LAN_length:
-
-    while i >=tmp:
-        counting = 0
-        if i == 802:
-            slice=i//tmp
-            counting = i//slice
-            dic1 = {i:counting}
-            tmp+=1
-        elif i == 743:
-            slice=i//tmp
-            counting = i//slice
-            dic2 = {i:counting}
-        elif i == 457:
-            slice=i//tmp
-            counting = i//slice
-            dic3 = {i:counting}
+def Counting(capacity):
+    cnt = 1
+    sum = 0
+    for x in Music:
+        # 용량이 초과되면
+        if sum + x > capacity:
+            # 카운트를 증가하고
+            cnt +=1
+            # 새로운 곡을 sum에 넣고 초기화
+            sum =x
         else:
-            slice=i//tmp
-            counting = i//slice
-            dic4 = {i:counting}
-            
-        print(dic1)
-    
+            sum +=x
+    return cnt
 
+lt = 1
+rt = sum(Music)
+
+while lt <= rt:
+    mid=(lt + rt) ## dvd 한장의 용량을 mid로
+    # Counting == 잘라본것을 용량이 맞는지 확인 하는 함수
+    # mid 정도로 하면 몇개가 나와??
+    # 정확한 코드는 나중에 
+    if Counting(mid) <= M:
+        # res 보다 큰것은 무조껀 답이됨
+        # 20을 넣을 수 있는 곳은 10도 넣을 수 있다.
+        res=mid
+        rt =mid -1 
+    else:
+        lt = mid +1
+    
+print(res)
         
+    
