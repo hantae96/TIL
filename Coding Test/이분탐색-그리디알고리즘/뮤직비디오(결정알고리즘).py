@@ -1,28 +1,28 @@
 N,M = 9,3
 Music = [1,2,3,4,5,6,7,8,9]
 
-def Counting(capacity):
-    cnt = 1
-    sum = 0
-    for x in Music:
-        if sum + x > capacity:
-            cnt +=1
-            sum =x
+def Counting(mid):
+    tmp = 0
+    cnt = 0
+    for i in Music:
+        if tmp+i <= mid:
+            tmp += i
         else:
-            sum +=x
+            tmp = i
+            cnt+=1
     return cnt
 
-left = 1
-right = sum(Music)
+lt = 1
+rt = sum(Music)
+res = 0
 
-while left <= right:
-    mid=(left + right) // 2
-    # Counting == 잘라본것을 용량이 맞는지 확인 하는 함수
+while lt <= rt:
+    mid = (lt+rt)//2
     if Counting(mid) <= M:
-        res=mid
+        res = mid
+        rt = mid- 1
     else:
         lt = mid +1
-    
-    print(res)
         
-    
+        
+print(res)
