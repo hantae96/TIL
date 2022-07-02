@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <div id="app">
+        <!-- <app-header v-bind : 프롭스 속성 이름 = "상위 컴포넌트의 데이터 이름"></app-header> -->
+        <app-header v-bind:propsdata = "message"></app-header>
+    </div>
+    <script>
+
+        var appHeader = {
+            template : '<h1>header</h1>',
+            // 하위 컴포넌트에 props라고 정의
+            props : ['propsdata']
+        }
+
+        new Vue({
+            el : '#app',
+            components : {
+                'app-header': appHeader
+            },
+            data : {
+                message : 'hi!'
+            }
+        })
+    </script>
+</body>
+</html>
