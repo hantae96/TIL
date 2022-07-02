@@ -1,2 +1,2 @@
 # TIL
-Today I Learned! / One day One commit
+Today I Learned / One day One commit
