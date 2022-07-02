@@ -11,22 +11,31 @@
     <div id="app">
         <!-- <app-header v-bind : 프롭스 속성 이름 = "상위 컴포넌트의 데이터 이름"></app-header> -->
         <app-header v-bind:propsdata = "message"></app-header>
+        <app-content v-bind:propsdata = "num"></app-content>
     </div>
     <script>
 
         var appHeader = {
-            template : '<h1>header</h1>',
+            template: '<h1>{{prosdata}}</h1>',
             // 하위 컴포넌트에 props라고 정의
+            // 상위 컴포넌트의 데이터를 바꾸면 하위 컴포넌트 props 가 변경된다 (reactivity)
             props : ['propsdata']
+        }
+
+        var appContent = {
+            template: '<div>{{prosdata}}</div>',
+            props: ['propsdata']
         }
 
         new Vue({
             el : '#app',
             components : {
-                'app-header': appHeader
+                'app-header': appHeader,
+                'app-content' : appContent
             },
             data : {
-                message : 'hi!'
+                message : 'hi!',
+                num : 10,
             }
         })
     </script>
