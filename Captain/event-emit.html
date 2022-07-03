@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <!-- <app-header v-on : 하위 컴포넌트에서 발생한 이벤트 이름 = "상위 컴포넌트의 메서드 이름"></app-header> -->
+        <!-- 하위 컴포넌트에서 발생한 이벤트가 올라왔을때, 상위컴포넌트의 메서드를 실행시킨다. -->
+        <app-header v-on:pass="logText"></app-header>
+        <!-- plus라는 이벤트가 발생하면, 상위컴포넌트의 plusNum을 발생시킨다.-->
+        <app-content v-on:plus="plusNum"></app-content>
+        <p>{{num}}</p>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>
+        
+        var appHeader = {
+            template : '<button v-on :click="passEvent">click!</button>',
+            methods: {
+                passEvent : function(){
+                    this.$emit('pass');
+                }
+            }
+        }
+
+        var appContent = {
+            // click 하면 addNumber라는 이벤트를 발생시킨다.
+            template : '<button v-on:click="addNumber">add</button>',
+            methods : {
+                // addNumber는 상위 컴포넌트에 "plus"라는 이벤트를 발생을 알려준다.
+                addNumber : function(){
+                    // appContent.$emit(방출하다)
+                    this.$emit('plus')
+                }
+            }
+        }
+
+        new Vue({
+            el : '#app',
+            components:{
+                'app-header':appHeader,
+                'app-content':appContent,
+            },
+
+            data:{
+               num : 10, 
+            },
+
+            methods: {
+                logText:function(){
+                    console.log('hi')
+                },
+                plusNum:function(){
+                    this.num++;
+                    console.log(this.num)
+                }
+            }
+            
+        });
+    </script>
+</body>
+</html>
