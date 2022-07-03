@@ -3,8 +3,6 @@
   <div class = "DiscountPage">
     <h4>지금 결제하면 30% 할인</h4>
   </div>
-
-
 </template>
 
 <script>
