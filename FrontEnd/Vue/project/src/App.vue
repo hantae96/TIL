@@ -1,4 +1,5 @@
 <template>
+<div>
   <img alt="Vue logo" src="./assets/logo.png">
   
   <div class = "menu">
@@ -7,7 +8,8 @@
   
 <DiscountPage/>
 
-<ModalPage/>
+<ModalPage :dataSet="dataSet" :누른거 = "누른거" :모달창열렸니 = "모달창열렸니"/>
+
 <!-- 제품 소개 개요 -->
   <div class = "salePage">
     <div v-for = "(data,i) in dataSet" :key="i">
@@ -20,7 +22,7 @@
   </div>
 
 <DiscountPage/>
-
+</div>
 </template>
 
 <script>
