@@ -8,18 +8,18 @@
   
 <DiscountPage/>
 
-<ModalPage :dataSet="dataSet" :누른거 = "누른거" :모달창열렸니 = "모달창열렸니"/>
+<ModalPage v-bind:dataSet="dataSet" v-bind:누른거 = "누른거" v-bind:모달창열렸니 = "모달창열렸니"/>
+<div v-for = "(data,i) in Object.keys(dataSet).length" :key = "i">
+  <p>{{i}}</p>
+</div>
 
-<!-- 제품 소개 개요 -->
-  <div class = "salePage">
-    <div v-for = "(data,i) in dataSet" :key="i">
-    <img :src = "dataSet[i].image" class = "room-img">
-<!-- 클릭 이벤트가 발생하면 모달창을 띄운다. 추가적으로 누른거 변수에다가 i를 갱신하면 몇번째 모달창을 눌렀는 지 알 수 있다. -->
-    <h4 @click = "모달창열렸니 = true; 누른거 = i">{{data.title}}</h4>
-    
-    <p>{{dataSet[i].price}}원</p>
-    </div>
-  </div>
+<!-- 카드 소개 페이지 컴포넌트화 -->
+<cardPage v-bind:dataSet="dataSet" v-bind:누른거 = "누른거" v-bind:모달창열렸니 = "모달창열렸니"/>
+<cardPage v-bind:dataSet="dataSet" v-bind:누른거 = "누른거" v-bind:모달창열렸니 = "모달창열렸니"/>
+<cardPage v-bind:dataSet="dataSet" v-bind:누른거 = "누른거" v-bind:모달창열렸니 = "모달창열렸니"/>
+<cardPage v-bind:dataSet="dataSet" v-bind:누른거 = "누른거" v-bind:모달창열렸니 = "모달창열렸니"/>
+<cardPage v-bind:dataSet="dataSet" v-bind:누른거 = "누른거" v-bind:모달창열렸니 = "모달창열렸니"/>
+<cardPage v-bind:dataSet="dataSet" v-bind:누른거 = "누른거" v-bind:모달창열렸니 = "모달창열렸니"/>
 
 <DiscountPage/>
 </div>
@@ -30,6 +30,7 @@
 import data from "./assets/oneroom.js";
 import DiscountPage from "./Discount-page.vue";
 import ModalPage from "./Modal-page.vue";
+import cardPage from "./card-page.vue";
 
 export default {
   name: 'App',
@@ -55,6 +56,7 @@ export default {
     // 외부에서 받아온 컴포넌트를 내부 컴포넌트로 등록
     DiscountPage: DiscountPage,
     ModalPage : ModalPage,
+    cardPage : cardPage,
 }
 }
 </script>
@@ -105,9 +107,6 @@ div {
   padding : 10px;
 }
 
-.room-img{
-  width : 100%;
-  margin-top: 40px;
-}
+
 
 </style>
