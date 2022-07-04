@@ -9,17 +9,9 @@
 <DiscountPage/>
 
 <ModalPage v-bind:dataSet="dataSet" v-bind:누른거 = "누른거" v-bind:모달창열렸니 = "모달창열렸니"/>
-<div v-for = "(data,i) in Object.keys(dataSet).length" :key = "i">
-  <p>{{i}}</p>
-</div>
 
 <!-- 카드 소개 페이지 컴포넌트화 -->
-<cardPage v-bind:dataSet="dataSet" v-bind:누른거 = "누른거" v-bind:모달창열렸니 = "모달창열렸니"/>
-<cardPage v-bind:dataSet="dataSet" v-bind:누른거 = "누른거" v-bind:모달창열렸니 = "모달창열렸니"/>
-<cardPage v-bind:dataSet="dataSet" v-bind:누른거 = "누른거" v-bind:모달창열렸니 = "모달창열렸니"/>
-<cardPage v-bind:dataSet="dataSet" v-bind:누른거 = "누른거" v-bind:모달창열렸니 = "모달창열렸니"/>
-<cardPage v-bind:dataSet="dataSet" v-bind:누른거 = "누른거" v-bind:모달창열렸니 = "모달창열렸니"/>
-<cardPage v-bind:dataSet="dataSet" v-bind:누른거 = "누른거" v-bind:모달창열렸니 = "모달창열렸니"/>
+  <cardPage v-bind:data="dataSet[i]" v-for = "(value,i) in dataSet" :key="i"/>
 
 <DiscountPage/>
 </div>
@@ -36,7 +28,8 @@ export default {
   name: 'App',
   // 데이터를 저장할 때 객체 자료형으로 저장
   data(){
-    return {
+    return {      
+    오브젝트 :{name : 'kim', age : 20},
     dataSet : data,
       누른거 : 0,
       모달창열렸니 : false,
