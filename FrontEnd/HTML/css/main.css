@@ -25,28 +25,32 @@ margin-right : auto;
 
 .container {
     width : 800px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .header{
     width : 100%;
     height: 100px;
-    background: aquamarine;
+    background: white;
 }
 
 .content{
     width : 80%;
     height : 200px;
-    background: cornflowerblue;
+    background: white;
     text-align: left;
+
+    margin-left: 10px;
     float : left;
 }
 
 
 .right{
     float : right;
-    width : 20%;
+    width : 15%;
     height : 200px;
-    background : coral;
+    background : white;
 }
 
 
@@ -67,4 +71,17 @@ margin-right : auto;
 
 h4,h2,p{
     margin : 0;
+}
+
+.class a{
+    font-size: 16px;
+    text-decoration: none;
+}
+
+
+.main-background {
+    width: 100%;
+    height : 500px;
+    background-image: url("shoes.jpg");
+    background-size: 100%;
 }
