@@ -1,0 +1,53 @@
+html{
+    font-size : 10px;
+}
+
+body {
+    margin : 3rem;
+    width : 400px;
+    font : 1.4rem/1.5;
+}
+
+h1,p {
+    margin-top : 0;
+    white-space : pre-line;
+}
+
+h1 {
+    line-height : 1.2;
+}
+
+p {
+    margin-bottom : 0.7rem;
+}
+
+ul {
+    margin-top : 0.7rem;
+    list-style: none;
+    padding-left : 0;
+}
+
+li ::before {
+    content : '+';
+    font-size : 10px;
+}
+
+.profile{
+    position : relative;
+    top : 4px;
+    box-sizing: border-box;
+    border : 1px solid #d0d0d0;
+    padding : 3px;
+    vertical-align: middle;
+    width : 130px;
+    height : auto;
+}
+
+.group {
+    overflow : hidden;
+}
+
+.profile {
+    float : left;
+    margin-right: 15px;
+}
