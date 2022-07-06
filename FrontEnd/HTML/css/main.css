@@ -102,8 +102,9 @@ h4,h2,p{
 .main-title{
     color : white;
     font-size : 40px;
-    margin-left : 50rem;
-    margin-top: 12rem;
+    margin-left: auto;
+    margin-top : 10%;
+    text-align: center;
     
     
 }
@@ -113,6 +114,7 @@ h4,h2,p{
     font-size : 30px;
     margin : auto;
     margin-bottom: 10px;
+    text-align: center;
 }
 
 .main-button{
@@ -132,6 +134,11 @@ h4,h2,p{
     border-radius: 5px;
 }
 
+.blank-box{
+    margin-top: 10%;
+    margin-left : 15%;
+}
+
 .intro-box{
     position: absolute;
     top : 370px;
@@ -143,10 +150,16 @@ h4,h2,p{
     background-color: lightgrey;
     width : 60%;
     max-width: 600px;
-    height: 20%;
+    height: 30%;
     font-size : 20px;
     padding-top: 40px;
     text-align: center;
     border-radius: 5px;
     box-sizing: border-box;
+}
+
+.background{
+    background-color: gray;
+    width : 100%;
+    height: 100%;
 }
