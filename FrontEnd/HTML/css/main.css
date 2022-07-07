@@ -95,7 +95,7 @@ h4,h2,p{
 .main-background {
     width: 100%;
     height : 500px;
-    background-image: url("../img/shoes.jpg");
+    background-image: url("../img/back_img.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -106,7 +106,7 @@ h4,h2,p{
 
 .main-title{
     text-align: center;
-    color : white;
+    color :white;
     font-size : 40px;
     margin : auto;
     margin-top: 12rem;
@@ -181,11 +181,25 @@ h4,h2,p{
     display: flex;
     text-align: center;
 
-
-    color : white;
+    color : black;
     font-size: 30px;
     width : 100px;
     height : 50px;
-    background-color: rgb(236,108,084);
+    background-color: white;
     padding-top: 5px;
+}
+
+.test{
+    width : 50rem;
+    background: grey;
+}
+
+
+@media screen and (max-width:1200px) {
+    .main-title{
+        font-size : 30px;
+    }
+    .main-button{
+        width : 40px;
+    }
 }
