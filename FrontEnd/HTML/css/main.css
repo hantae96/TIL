@@ -139,6 +139,18 @@ h4,h2,p{
     border-radius: 5px;
 }
 
+.main-button:hover{
+    background-color: #eee;
+}
+
+.main-button:active{
+    background-color: green;
+}
+
+.main-button:focus{
+    background-color: darkgreen;
+}
+
 .intro-box{
     position: absolute;
     top : 32rem;
@@ -168,6 +180,7 @@ h4,h2,p{
 .flex-item{
     display: flex;
     text-align: center;
+
 
     color : white;
     font-size: 30px;
