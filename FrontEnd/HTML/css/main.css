@@ -1,64 +1,178 @@
+@font-face {
+    font-family: 'naver-font';
+    src : url("../font/NanumFontSetup_TTF_SQUARE/NanumSquareR.ttf")
+}
+
 div {
     box-sizing: border-box;
 }
 
 body {
     margin : 0px;
-    background-color: skyblue;
 }
 
-td,th {
-    border-bottom : solid 1px #c2d3de;
+.profile{
+width : 100px; 
+display : block; 
+margin-left : auto; 
+margin-right : auto;
 }
 
-table {
-    border-collapse: collapse;
+.content{
+    font-size : 20px; 
     text-align: center;
-    background-color: white;
-    width : 600px;
 }
 
-img {
+.box{
+    width : 200px;
+    background: cadetblue;
+    margin-left : 10px;
+    padding : 40px;
+    width : 100px; 
+    margin-left : auto; 
+    margin-right : auto;
+    color : white;
+    box-shadow: 5px 5px gray;
+}
+
+
+.container {
+    width : 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.header{
+    width : 100%;
+    height: 100px;
+    background: white;
+}
+
+.content{
+    width : 80%;
+    height : 200px;
+    background: white;
+    text-align: left;
+
+    margin-left: 10px;
     float : left;
 }
 
-.main-box{
+
+.right{
+    float : right;
+    width : 15%;
+    height : 200px;
+    background : white;
+}
+
+
+.img img{
+    width : 10%;
+    height : 10%;
+    float : left;
+    margin-left : 10px;
+    padding-bottom: 2px;
+    padding-top: 2px;
+}
+
+.headerText{
+    margin-left: 100px;
+    padding : 25px 0px;
+}
+
+
+h4,h2,p{
+    margin : 0;
+}
+
+.class a{
+    font-size: 16px;
+    text-decoration: none;
+}
+
+
+.main-background {
+    width: 100%;
+    height : 500px;
+    background-image: url("../img/shoes.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    padding : 1px;
     position: relative;
-    /* width : 1000px;
-    height: 1000px; */
-    margin-left : 12.5rem;
-    margin-top: 3rem;
+    /* filter: brightness(70%) saturate(80%); */
 }
 
-.cart-button {
-    margin-left: 230px;
+.main-title{
+    text-align: center;
     color : white;
-    background-color: navy;
-    width : 200px;
-    height: 50px;
-    cursor : pointer;
-
+    font-size : 40px;
+    margin : auto;
+    margin-top: 12rem;
+    
+    
 }
 
-.cart-button:hover{
-    background-color: chocolate;
+.main-content{
+    text-align: center;
+    color : white;
+    font-size : 30px;
+    margin : auto;
+    margin-bottom: 10px;
 }
 
+.main-button{
+    position: absolute;
 
-.cart-button:focus{
-    background-color: aqua;
-}
+    left : 0;
+    right : 0;
+    margin : auto;
+    width : 150px;
+    z-index: 2;
 
 
-.cart-button:active {
-    background-color: brown;
-    border : 2px solid black;
-}
-
-.input-test{
+    padding: 20px 20px;
     font-size : 20px;
+    background: white;
+    border : none;
+    border-radius: 5px;
 }
 
-.input-test:focus{
-    border : 2px solid red;
+.intro-box{
+    position: absolute;
+    top : 32rem;
+    left : 0;
+    right : 0;
+    margin: auto;
+    z-index : 1;
+
+    background-color: lightgrey;
+    width : 60%;
+    max-width: 600px;
+    height: 30%;
+    font-size : 20px;
+    padding-top: 40px;
+    text-align: center;
+    border-radius: 5px;
+}
+
+.flex-container {
+    position: sticky;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.flex-item{
+    display: flex;
+    text-align: center;
+
+    color : white;
+    font-size: 30px;
+    width : 100px;
+    height : 50px;
+    background-color: rgb(236,108,084);
+    padding-top: 5px;
 }
