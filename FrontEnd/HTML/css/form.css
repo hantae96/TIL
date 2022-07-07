@@ -39,3 +39,7 @@ input[type=text]{
     float : left;
     margin: 0;
 }
+
+table {
+    border-collapse: collapse;
+}
