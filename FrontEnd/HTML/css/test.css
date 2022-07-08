@@ -1,0 +1,24 @@
+.test-template {
+    margin : auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.sub-template{
+    margin: auto;
+}
+
+/* 태블릿 사이즈 */
+@media screen and (max-width : 1200px){
+    .sub-template{
+        width : 50px;
+    }
+}
+
+@media screen and (max-width : 768px){
+    .test-template{
+        flex-direction: column;
+    }
+}
