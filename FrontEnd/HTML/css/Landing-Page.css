@@ -15,11 +15,14 @@ div {
 .AppTemplate{
     display: flex;
     flex-direction: column;
+    
 }
 
 
 .top{
+
     display: flex;
+    flex-direction: row;
     justify-content: space-between;
 
     background: rgb(73,132,226);
@@ -139,4 +142,43 @@ div {
     margin-left: 20px;
     margin-right: 20px;
 
+}
+
+/* 휴대폰 사이즈 */
+@media screen and (max-width : 992px){
+    .top{
+        text-align: center;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .AppText{
+        /* float : left; */
+        width : 70%;
+        font-size: 2rem;
+
+        margin-top : 5%;
+        margin-left: 10%;
+    
+        color : white;
+    }
+    
+
+
+    .iphoneImg{
+        /* float : right; */
+    
+        height: 60%;
+        width: 25%;
+        
+        margin-left: 20%;
+        margin-top: 5.5%;
+    }
+
+    .bottom{
+        color : white;
+        background-color: #5c56dd;
+        text-align: center;
+    }
+    
 }
