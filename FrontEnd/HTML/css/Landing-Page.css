@@ -84,41 +84,52 @@ div {
 }
 
 .fourTemplate{
+    position: relative;
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 400px 400px;
 
-    padding-left : 10%;
-    padding-right : 10%;
+    width : 100%;
+    height : 100%;
 
     color : white;
     text-align: left;
     font-size : 2rem;
 }
 
+.white-box{
+    position: absolute;
+    width : 100%;
+    height : 100%;
+    z-index: 2;
+    border : 1px solid white;
+}
+
+.white-box:hover {
+    border : 20px solid white;
+    transition: 1s
+}
 
 .article1{
-    padding-top : 10%;
-    padding-left : 10%;
+    position: relative;
     background-image: url('../img/portfolio-1.jpg');
 }
 .article2{
-    padding-top : 10%;
-    padding-left : 10%;
+    position: relative;
     background-image: url('../img/portfolio-2.jpg');
 }
 .article3{
-    padding-top : 10%;
-    padding-left : 10%;
+    position: relative;
     background-image: url('../img/portfolio-3.jpg');
 }
 .article4{
-    padding-top : 10%;
-    padding-left : 10%;
+    position: relative;
     background-image: url('../img/portfolio-4.jpg');
 }
 
-
+.articletext{
+    padding: 40px;
+}
 
 .footer{
     display: flex;
