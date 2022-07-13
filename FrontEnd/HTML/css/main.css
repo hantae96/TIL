@@ -286,6 +286,39 @@ h4,h2,p{
 }
 
 
+/* 폼 css */
+
+
+input{
+    font-size: 20px;
+    width : 550px;
+    box-sizing: border-box;
+}
+
+input[type=text]{
+    margin-top: 20px;
+    width : 250px;
+}
+
+.form {
+    margin: auto;
+    margin-top: 10%;
+    padding : 40px;
+
+    width: 700px;
+    height: 500px;
+    
+    border: solid 2px black;
+
+    background-color: white;
+}
+
+.nameTag{
+    font-size: 20px;
+    width : 45%;
+    float : left;
+    margin-top: 20px;
+}
 
 /* 태블릿 사이즈 */
 @media screen and (max-width:1200px) {
@@ -304,4 +337,26 @@ h4,h2,p{
     .test-template{
         flex-direction: column;
     }
+}
+
+.pseudo::after {
+    content : "안녕";
+    color : red;
+    font-size : 30px;
+}
+
+progress {
+    -webkit-appearance: none;
+    appearance: none;
+    background : white 
+}
+
+progress::webkit-progess-bar {
+    background-color : #eee;
+    border-radius : 2px;
+}
+
+progress::-webkit-progress-value{
+    background-color: red;
+    border-radius : 2px;
 }

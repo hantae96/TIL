@@ -1,0 +1,90 @@
+div {
+    box-sizing: border-box;
+}
+
+
+@mixin list($bg-color){
+        background-color: $bg-color;
+}
+
+
+li {
+    &:hover{
+        @include list(blue);
+    }   
+}
+
+
+@mixin box($bg-color){
+    background-color: $bg-color;
+    width : 200px;
+    height: 100px;
+    margin-bottom: 10px;
+}
+
+// $colors : (green,red,yellow);
+
+// @each $item in $colors{
+//     @include box(#{$item});
+// }
+
+
+$colorlist : green,blue,yellow;
+
+@for $num from 1 through 3{
+    .alertbox#{$num}{
+        @each $color in $colorlist{
+            @include box($color);
+            }
+        }
+}
+
+
+
+
+
+$size-list : 6,4,3;
+
+
+
+@mixin cg-width($num){
+    @if($num==6){
+        float : left;
+        width: 50%;
+    }
+    @else if($num==4){
+        float : left;
+        width : 33.333%;
+    }
+    @else if($num==3){
+        float : left;
+        width : 25%;
+    }
+
+    background-color: blue;
+    border: 1px solid black;
+    margin-bottom: 5px;
+}
+
+
+.row {
+    @each $num in $size-list {
+        .col-#{$num}{
+            @include cg-width($num)
+            }
+    }
+
+
+
+    // .col-6{
+    //     @include cg-width(6)
+    // }
+
+    // .col-4{
+    //     @include cg-width(4)
+    // }
+
+    // .col-3{
+    //     @include cg-width(3)
+    // }
+}

@@ -1,0 +1,17 @@
+body {
+    padding: 10%;
+    background: #f7f9fc;
+}
+
+div {
+    box-sizing: border-box;
+}
+
+.pill {
+	display: inline-block;
+	border: 1px solid lightgray;
+	border-radius: 100px;
+	padding: 3px 12px 5px 12px;
+	margin-right: 2px;
+	margin-bottom: 5px;
+}
