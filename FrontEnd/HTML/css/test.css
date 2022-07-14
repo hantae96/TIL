@@ -1,24 +1,128 @@
-.test-template {
-    margin : auto;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    flex-wrap: wrap;
+body{
+    margin: 0;
 }
 
-.sub-template{
-    margin: auto;
+.ani-text{
+    text-align: center;
 }
 
-/* 태블릿 사이즈 */
-@media screen and (max-width : 1200px){
-    .sub-template{
-        width : 50px;
+.ani-text:hover {
+    animation-name: 왔다갔다;
+    animation-duration: 3s;
+    animation-iteration-count: 3;
+}
+
+
+
+@keyframes 왔다갔다 {
+    0% {
+        transform : translateX(0px);
+    }
+    50% {
+        transform: translateX(-100px);
+    }
+
+    75%{
+        transform: translateX(100px);
+    }
+    100% {
+        transform: translateX(0px);
     }
 }
 
-@media screen and (max-width : 768px){
-    .test-template{
-        flex-direction: column;
+button{
+    display: block;
+    background-color: aqua;
+    border: none;
+    width : 100px;
+    height: 50px;
+    margin : auto;
+    border-radius: 5px;
+}
+
+button:hover{
+    animation-name: 왔다갔다2;
+    animation-duration: 1s;
+    animation-iteration-count: 1;
+    transition-timing-function: ease
+}
+
+@keyframes 왔다갔다2 {
+    0%{
+        transform: rotate(-15deg);
+    }
+    33%{
+        transform : rotate(15deg);
+    }
+
+    66%{
+        transform : rotate(-15deg);
+    }
+    100%{
+        transform : rotate(0deg);
+    }
+}
+
+.cross p {
+    text-align: center;
+    font-size: 100px;
+    font-weight: 100;
+}
+
+.cross p:hover{
+    animation-name: 왔다갔다3;
+    animation-duration: 2s;
+    /* animation: splash-display 2s ease-in-out forwards; */
+}
+
+@keyframes 왔다갔다3 {
+    25%{
+        transform: rotate(-30deg);
+    }
+
+    80%{
+        /* transform: rotate(120deg); */
+        transform: scale(2);
+        /* transform: rotate(-30deg); */   
+    }
+
+    100%{
+        transform: scale(2);
+        transform: rotate(30deg);
+        
+        /* transform: scale(2); */
+    }
+}
+
+
+.blackbox{
+    text-align: center;
+    color : white;
+    float : left;
+    background-color: black;
+    height: 100vh;
+    width : 20vh;
+    
+}
+
+.blackbox:hover{
+    animation-name: 왔다갔다4;
+    animation-duration: 1s;
+    
+    
+}
+
+.blackbox:hover:after{
+    content : 'Menu';
+}
+
+
+@keyframes 왔다갔다4{
+    50%{
+        transform-origin: 50% 100%; 
+    }
+    100%{
+        transform-origin: 50% 50%;
+        transform: scalex(2);
     }
 }
