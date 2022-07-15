@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="ko">
+ <head>
+  <meta charset = utf-8">
+  <title>test</title>
+  <link rel = "stylesheet" href = "main.css">
+ </head>
+ <body>
+    <h1 id = "hello" style="color:blue">안녕하세요</h1>
+    <h1 id = "hi">JS 초보에요</h1>
+
+    <div class="alert-box" id = "alert">알람창임<button id = "close">닫기</button></div>
+    <button onclick="document.getElementById('alert').style.display='block';">버튼</button>
+    
+    <script>
+        document.getElementById('hello').innerHTML = '안녕';
+        document.getElementById('hi').style.fontSize = "16px";
+        document.getElementById('close').style.display = 'none';      
+    </script>
+ </body>
+</html>
