@@ -3,18 +3,34 @@
  <head>
   <meta charset = utf-8">
   <title>test</title>
-  <link rel = "stylesheet" href = "main.css">
+  <link rel = "stylesheet" href = "./main.css">
  </head>
- <body>
-    <h1 id = "hello" style="color:blue">안녕하세요</h1>
-    <h1 id = "hi">JS 초보에요</h1>
 
-    <div class="alert-box" id = "alert">알람창임<button onclick = "document.getElementById('alert').style.display = 'none';">닫기</button></div>
-    <button onclick="document.getElementById('alert').style.display='block';">버튼</button>
-    
+ <body>
+    <div class = "alert-box" id = "alert">
+        <p>알림창임</p>
+        <p>이것도바뀌나?</p>
+        <button onclick = "알림창열기('none');">닫기</button>
+    </div>
+    <button id = "id" onclick = "viewId();">버튼1</button>
+    <button id = "password" onclick = "viewPassword();">버튼2</button>
+
     <script>
-        document.getElementById('hello').innerHTML = '안녕';
-        document.getElementById('hi').style.fontSize = "16px";    
+
+        function 알림창열기(구멍){
+            document.getElementById('alert').style.display = 구멍;
+        }
+
+        function viewId(){
+            document.getElementById('alert').style.display = 'block';
+            document.getElementById('alert').innerText = "아이디를 입력하세요"
+        }
+
+        function viewPassword(){
+            document.getElementById('alert').innerText = "비밀번호를 입력하세요"
+        }
+
+
     </script>
  </body>
 </html>
