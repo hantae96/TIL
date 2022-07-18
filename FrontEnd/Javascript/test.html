@@ -23,7 +23,7 @@
               <input type="text" class="form-control" id="email">
              </div>
              <div class="my-3">
-               <input type="password" class="form-control">
+               <input type="password" class="form-control" id="password">
              </div>
              <button type="submit" class="btn btn-primary" id="send">전송</button>
              <button type="button" class="btn btn-danger" id="close">닫기</button>
@@ -47,6 +47,7 @@
 
     
       <script>
+
         document.querySelector('#login').addEventListener('click',function(){
             document.querySelector('.black-bg').classList.add('show-modal');
         });
@@ -56,10 +57,18 @@
             document.querySelector('.black-bg').classList.remove('show-modal');
         });
 
-        document.querySelector('form').addEventListener('submit',function(){
+        document.querySelector('form').addEventListener('submit',function(e){
             if(document.querySelector('#email').value == "")
             {
-                alert('아이디내놔');
+                alert('아이디가 빈칸이잖아');
+                e.preventDefault();
+            }else if(document.querySelector('#password').value == ""){
+                alert('비밀번호가 빈칸이잖아!!')
+                e.preventDefault();
+            }else if(document.querySelector('#password').value.length<6){
+                alert('비밀번호가 6자 미만이잖아!!')
+            }else{
+                alert('드디어 통과했네..')
             }
         })
 
