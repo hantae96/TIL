@@ -33,3 +33,33 @@
   background-color: black;
   color : white;
 }
+
+.slide-container {
+  width : 300vw;
+}
+
+.slide-box {
+  width: 100vw;
+  float : left;
+}
+
+.slide-box img {
+  width : 100%;
+}
+
+
+.move-1{
+  transform: translateX(0vw);
+  transition: all 1s;
+}
+
+.move-2{
+  transform: translateX(-100vw);
+  transition: all 1s;
+}
+
+
+.move-3{
+  transform: translateX(-200vw);
+  transition: all 1s;
+}

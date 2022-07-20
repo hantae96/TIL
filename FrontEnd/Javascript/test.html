@@ -49,6 +49,23 @@
   <div class = "alert alert-danger">
     <span id = "second">5</span>초 이내 구매시 사은품 증정!
   </div>
+  <div style = "overflow: hidden;">
+    <div class = "slide-container">
+      <div class = "slide-box">
+        <img src = "./img/car1.png">
+      </div>
+      <div class = "slide-box">
+        <img src = "./img/car2.png">
+      </div>
+      <div class = "slide-box">
+        <img src = "./img/car3.png">
+      </div>
+    </div>
+  </div>
+
+  <button class ="slide-1">1</button>
+  <button class ="slide-2">2</button>
+  <button class ="slide-3">3</button>
 
     
       <script>
@@ -63,14 +80,20 @@
         });
 
         document.querySelector('form').addEventListener('submit',function(e){
-            if(document.querySelector('#email').value == "")
+          var inputEmailData = document.querySelector('#email').value
+          var inputPasswordData = document.querySelector('#password').value
+          if(inputEmailData == "")
             {
                 alert('아이디가 빈칸이잖아');
                 e.preventDefault();
-            }else if(document.querySelector('#password').value == ""){
+            }else if(/\S+@\S+.\S+/.test(inputEmailData) != true){
+              alert('이메일형식이 틀렸잖아!!');
+            }else if(inputPasswordData == ""){
                 alert('비밀번호가 빈칸이잖아!!')
                 e.preventDefault();
-            }else if(document.querySelector('#password').value.length<6){
+            }else if(/[A-Z]/.test(inputPasswordData)==false){
+                alert("비번에 대문자가 하나도 없잖아!!");
+            }else if(inputPasswordData.length<6){
                 alert('비밀번호가 6자 미만이잖아!!')
             }else{
                 alert('드디어 통과했네..')
@@ -108,6 +131,21 @@
             document.querySelector(".alert.alert-danger").style.visibility = "hidden";            
           }
         },1000)
+
+      
+        document.querySelector(".slide-1").addEventListener("click",function(){
+          document.querySelector(".slide-box").classList.add('move-1');
+        })
+
+        document.querySelector(".slide-2").addEventListener("click",function(){
+          document.querySelector(".slide-box").classList.add('move-2');
+        })
+
+        document.querySelector(".slide-3").addEventListener("click",function(){
+          document.querySelector(".slide-box").classList.add('move-3');
+        })
+
+
       </script>
     
     </body>
