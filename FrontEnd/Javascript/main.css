@@ -36,6 +36,8 @@
 
 .slide-container {
   width : 300vw;
+  transform: translateX(-100vw);
+  transition: all 1s;
 }
 
 .slide-box {
@@ -44,22 +46,17 @@
 }
 
 .slide-box img {
+  width : 50%;
+  height : 50%;
+}
+
+.navbar {
+  position : fixed;
   width : 100%;
+  z-index : 5;
 }
 
-
-.move-1{
-  transform: translateX(0vw);
-  transition: all 1s;
-}
-
-.move-2{
-  transform: translateX(-100vw);
-  transition: all 1s;
-}
-
-
-.move-3{
-  transform: translateX(-200vw);
+.navbar-brand{
+  font-size : 40px;
   transition: all 1s;
 }

@@ -33,7 +33,7 @@
 
     <nav class="navbar navbar-light bg-light">
         <div class="container-fluid">
-          <span class="navbar-brand">Navbar</span>
+          <span class="navbar-brand">Shop</span>
           <button class="navbar-toggler" type="button">
             <span class="navbar-toggler-icon"></span>
           </button>
@@ -62,10 +62,14 @@
       </div>
     </div>
   </div>
+  <button class ="slide-left"><</button>
+  <button class ="slide-right">></button>
 
-  <button class ="slide-1">1</button>
-  <button class ="slide-2">2</button>
-  <button class ="slide-3">3</button>
+  <div class="lorem" style="width: 200px; height: 100px; overflow-y: scroll">
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae voluptas voluptatum minus praesentium fugit debitis at, laborum ipsa itaque placeat sit, excepturi eius. Nostrum perspiciatis, eligendi quae consectetur praesentium exercitationem.
+  </div> 
+
+
 
     
       <script>
@@ -132,18 +136,65 @@
           }
         },1000)
 
+        $('.slide-1').on('click',function(){
+        $('.slide-container').css('transform','translateX(0vw)');
+      })
       
-        document.querySelector(".slide-1").addEventListener("click",function(){
-          document.querySelector(".slide-box").classList.add('move-1');
-        })
 
-        document.querySelector(".slide-2").addEventListener("click",function(){
-          document.querySelector(".slide-box").classList.add('move-2');
-        })
+      $('.slide-2').on('click',function(){
+        $('.slide-container').css('transform','translateX(-100vw)');
+      })
 
-        document.querySelector(".slide-3").addEventListener("click",function(){
-          document.querySelector(".slide-box").classList.add('move-3');
-        })
+      
+      $('.slide-3').on('click',function(){
+        $('.slide-container').css('transform','translateX(-200vw)');
+      })
+
+      var photoCnt = 0;
+
+      $('.slide-right').on('click',function(){
+        console.log("오른쪽")
+        if(photoCnt>-1 && photoCnt<3){
+          photoCnt++;
+          $('.slide-container').css('transform','translateX(-'+photoCnt*100+'vw)');
+        }
+      });
+
+      $('.slide-left').on('click',function(){
+        console.log("왼쪽")
+
+        if(photoCnt>-1 && photoCnt<3){
+          photoCnt--;
+          document.querySelector('.slide-container').style.transform = 'translateX(-'+photoCnt*100+'vw)';
+        }
+      })
+
+      window.addEventListener('scroll',function(){
+        var 스크롤양 = window.scrollY;
+        if(스크롤양 > 100)
+        {
+          document.querySelector('.navbar-brand').style.fontSize = "20px";
+        }
+        else{
+          document.querySelector('.navbar-brand').style.fontSize = "40px";
+        }
+      })
+
+  
+      document.querySelector('.lorem').addEventListener('scroll',function(){
+        var value= document.querySelector('.lorem').scrollTop;
+        var realvalue= document.querySelector('.lorem').scrollHeight;
+        var clientvalue= document.querySelector('.lorem').scrollHeight;
+        
+        if(value + clientvalue > realvalue-1)
+        {
+          console.log("다읽음")
+        }
+      })
+
+      console.log("실제높이 :" + document.querySelector('html').scrollHeight)
+      console.log("vh :" + document.querySelector('html').clientHeight)
+      console.log("현재 스크롤량 :" + document.querySelector('html').scrollTop)
 
 
       </script>
