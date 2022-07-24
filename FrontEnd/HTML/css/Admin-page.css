@@ -8,15 +8,39 @@ body{
     margin: 0;
 }
 
+h5,h6{
+    text-align: center;
+    margin: 5px;
+    padding-top: 10px;
+}
+
+i {
+    font-size: 25px;
+    float : right;
+    padding-right: 10px;
+}
+
+.banner p{
+    transition: all 0.5s;
+    transform: translateX(100px);
+}
+
+.banner:hover p{
+    transform: translateX(50px);
+    text-align: right;
+}
+
+
 .banner{
     position: fixed;
-    text-align: center;
+    text-align: left;
     color : white;
     background-color: #6666FF;
     width : 200px;
     height: 100vh;
     transform: translate(-100px);
     clear : both;
+    z-index: 2;
 
 }
 
@@ -27,6 +51,7 @@ body{
 .banner:hover{
     transform: translate(0px);
     transition: all 1s;
+    text-align: right;
 }
 
 
@@ -53,13 +78,67 @@ body{
 }
 
 .sub-button{
+    display: flex;
+    position: relative;
+    justify-content: space-between;
+    width: 200px;
     font-size: 30px;
     margin-right: 200px;
+    /* opacity: 50%; */
     
 }
 
-.badge {
+.badge{
     position : absolute;
-    top: 0px;
-    left: 15px;
+    background-color: red;
+    opacity: 100%;
+    left: 20px;
+    border-radius: 20%;
+    font-size : 15px;
+  }
+  
+  #badge2{
+    position : absolute;
+    background-color: red;
+    opacity: 100%;
+    left: 70px;
+    border-radius: 20%;
+    font-size : 15px;
+  }
+
+
+  .main{
+    position: relative;
+    left : 150px;
+    z-index: 1;
+  }
+
+  .card-section{
+    display: flex;
+  }
+
+  .card{
+    padding: 10px;
+    border-radius: 5%;
+    box-shadow : 2px 3px 5px 0px;
+    margin-right: 100px;
+
+  }
+
+  .card-body{
+    display: flex;
+    font-size: 20px;
+  }
+
+canvas{
+    float: left;
+    width : 800px;
+}
+
+  .chartcard{
+    float : right;
+    margin-top: 100px;
+    margin-right: 500px;
+    width: 1000px;
+    height : 800px;
   }

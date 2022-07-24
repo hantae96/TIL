@@ -13,7 +13,7 @@
   <body class = "">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
      <!-- 모달창 -->
-
+     <div class = "progress-bar"></div>
      <div class="black-bg">
         <div class="white-bg">
           <h4>로그인하세요</h4>
@@ -65,12 +65,9 @@
   <button class ="slide-left"><</button>
   <button class ="slide-right">></button>
 
-  <div class="lorem" style="width: 200px; height: 100px; overflow-y: scroll">
-    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae voluptas voluptatum minus praesentium fugit debitis at, laborum ipsa itaque placeat sit, excepturi eius. Nostrum perspiciatis, eligendi quae consectetur praesentium exercitationem.
-  </div> 
+  <div style = "height: 1000px;"></div>
 
-
-
+  
     
       <script>
 
@@ -180,21 +177,12 @@
         }
       })
 
-  
-      document.querySelector('.lorem').addEventListener('scroll',function(){
-        var value= document.querySelector('.lorem').scrollTop;
-        var realvalue= document.querySelector('.lorem').scrollHeight;
-        var clientvalue= document.querySelector('.lorem').scrollHeight;
-        
-        if(value + clientvalue > realvalue-1)
-        {
-          console.log("다읽음")
-        }
+
+      window.addEventListener('scroll',function(){
+        var ratio =((document.querySelector('html').scrollTop+document.querySelector('html').clientHeight)/document.querySelector('html').scrollHeight)*100;
+        document.querySelector('.progress-bar').style.width = ratio+"%"
       })
 
-      console.log("실제높이 :" + document.querySelector('html').scrollHeight)
-      console.log("vh :" + document.querySelector('html').clientHeight)
-      console.log("현재 스크롤량 :" + document.querySelector('html').scrollTop)
 
 
       </script>

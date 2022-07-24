@@ -60,3 +60,11 @@
   font-size : 40px;
   transition: all 1s;
 }
+
+.progress-bar{
+  position: fixed;
+  z-index: 10;
+  height : 20px;
+  width : 100%;
+  background-color: black;
+}

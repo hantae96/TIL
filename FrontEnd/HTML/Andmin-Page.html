@@ -10,10 +10,10 @@
  <body>
     <div class="banner">
         <div class = icon>
-        <p><i class="bi bi-house-fill"></i> Home</p>
-        <p><i class="bi bi-headphones"></i> Services</p>
-        <p><i class="bi bi-flag-fill"></i> Alerts</p>
-        <p><i class="bi bi-pie-chart-fill"></i> Stats</p>
+        <p>Home    <i class="bi bi-house-fill"></i></p>
+        <p>Services   <i class="bi bi-headphones"></i></p>
+        <p>Alerts   <i class="bi bi-flag-fill"></i></p>
+        <p>Stats    <i class="bi bi-pie-chart-fill"></i></p>
         </div>
     </div>
 
@@ -27,17 +27,127 @@
                   </div>
                   
                   <div class="sub-button">
+                    <span class="badge bg-danger">10</span>
                     <i class="bi bi-alarm-fill"></i>
+                    <span id = "badge2" class="badge bg-danger">10</span>
                     <i class="bi bi-chat-left-dots-fill"></i>
                     <p style="font-size: 20px;">hantae choi</p>
                   </div>
             </nav>
         </div>
         <div class="main">
+            <h2><strong>Dashboard</strong></h2>
             <div class="card-section">
+                <div class="card" style="width: 18rem; border-left: 5px solid #6666FF;">
+                    <div class="card-body">
+                        <div style="width: 150px;">
+                            <h5 class="card-title">Earning (Monthly)</h5>
+                            <h6 class="card-subtitle mb-2 text-muted">$400,000</h6>
+                        </div>
+                        <div style="font-size : 50px; padding-top: 10px; padding-left: 10px;">
+                            <i class="bi bi-file-earmark-arrow-down-fill"></i>
+                        </div>
+                    </div>
+                  </div>
+
+                  <div class="card" style="width: 18rem; border-left: 5px solid purple;">
+                    <div class="card-body">
+                        <div style="width: 150px;">
+                            <h5 class="card-title">Earning (Monthly)</h5>
+                            <h6 class="card-subtitle mb-2 text-muted">$800,000</h6>
+                        </div>
+                        <div style="font-size : 50px; padding-top: 10px; padding-left: 20px;">
+                            <i class="bi bi-currency-dollar"></i>
+                        </div>
+                    </div>
+                  </div>
+
+                  <div class="card" style="width: 18rem; border-left: 5px solid greenyellow;">
+                    <div class="card-body">
+                        <div style="width: 150px;">
+                            <h5 class="card-title">Tasks</h5>
+                            <h6 class="card-subtitle mb-2 text-muted">13</h6>
+                        </div>
+                        <div style="font-size : 50px; padding-top: 10px; padding-left: 20px;">
+                            <i class="bi bi-list-check"></i>
+                        </div>
+                    </div>
+                  </div>
+
+
+                  <div class="card" style="width: 18rem; border-left: 5px solid rebeccapurple;">
+                    <div class="card-body">
+                        <div style="width: 150px;">
+                            <h5 class="card-title">Requests</h5>
+                            <h6 class="card-subtitle mb-2 text-muted">26</h6>
+                        </div>
+                        <div style="font-size : 50px; padding-top: 10px; padding-left: 20px;">
+                            <i class="bi bi-chat-fill"></i>
+                        </div>
+                    </div>
+                  </div>
             </div>
-            <div class="chart"></div>
+
+            <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+            <div class="container mt-3">
+                <div class="row">
+                  <div class="col-lg-8">
+                    <div class="card">
+                      <div class="card-header">
+                        Earnings
+                      </div>
+                      <div class="card-body">
+                        <canvas id="myChart"></canvas>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-lg-4">
+          
+                    <div class="card">
+                      <div class="card-header">
+                        Featured
+                      </div>
+                      <ul class="list-group list-group-flush">
+                        <li class="list-group-item">An item</li>
+                        <li class="list-group-item">A second item</li>
+                        <li class="list-group-item">A third item</li>
+                      </ul>
+                    </div>
+          
+                  </div>
+                </div>
+              </div>
         </div>
 
+        
 </body>
+        <script>
+            var ctx = document.getElementById('myChart').getContext('2d');
+            var myChart = new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+                    datasets: [{
+                        label: '# of Votes',
+                        data: [12, 19, 3, 5, 2, 3],
+                        backgroundColor: 'rgba(255, 99, 132, 0.2)',
+                        borderColor: 'rgba(255, 99, 132, 1)',
+                        borderWidth: 1
+                    },
+                    ],
+                    fill : true,
+                },
+                options: {
+                    scales: {
+                        y: {
+                            beginAtZero: true
+                        }
+                    }
+                }
+            });
+
+    </script>
+
+
 </html>
