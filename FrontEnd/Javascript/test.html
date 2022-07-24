@@ -183,7 +183,18 @@
         document.querySelector('.progress-bar').style.width = ratio+"%"
       })
 
+      document.querySelector('.black-bg').addEventListener('click',
+      function(e){
+        // e.target; // 유저가 실제로 누른거
+        // console.log(e.target);
+        // e.curentTarget; // 이벤트리스너 달린 곳
+        // e.preventDefault(); // 이벤트 기본동작을 막아줌
+        // e.stopPropagation(); //
 
+        if(e.target ==  document.querySelector('.black-bg')){
+          document.querySelector('.black-bg').classList.remove('show-modal');
+        }
+      })
 
       </script>
     
