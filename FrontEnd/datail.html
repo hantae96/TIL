@@ -12,65 +12,69 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 </head>
   <body>
-      <div class="container mt-5">
-        <ul class="list">
-          <li class="tab-button">Products</li>
-          <li class="tab-button orange">Information</li>
-          <li class="tab-button">Shipping</li>
-        </ul>
-        <div class="tab-content">
-          <p>상품설명입니다. Product</p>
-        </div>
-        <div class="tab-content show">
-          <p>스펙설명입니다. Information</p>
-        </div>
-        <div class="tab-content">
-          <p>배송정보입니다. Shipping</p>
-        </div>
-      </div> 
+
+    <form class="container my-5 form-group">
+      <p>상품선택</p>
+      <select class="form-select mt-2">
+        <option>모자</option>
+        <option>셔츠</option>
+        <option>바지</option>
+      </select>
+      <select class="form-select mt-2 form-hide">
+        <option>95</option>
+        <option>100</option>
+      </select>
+  </form>
 
 
-      <script src="tab.js">
+  <div id="test">
 
-      </script>
-    
-    </body>
-  
-    <style>
-        ul.list {
-          list-style-type: none;
-          margin: 0;
-          padding: 0;
-          border-bottom: 1px solid #ccc;
-        }
-        ul.list::after {
-          content: '';
-          display: block;
-          clear: both;
-        }
-        .tab-button {
-          display: block;
-          padding: 10px 20px 10px 20px;
-          float: left;
-          margin-right: -1px;
-          margin-bottom: -1px;
-          color: grey;
-          text-decoration: none;
-          cursor: pointer;
-        }
-        .orange {
-          border-top: 2px solid orange;
-          border-right: 1px solid #ccc;
-          border-bottom: 1px solid white;
-          border-left: 1px solid #ccc;
-          color: black;
-          margin-top: -2px;
-        }
-        .tab-content {
-          display: none;
-          padding: 10px;
-        }
-        .show {
-          display: block;
+  </div>
+
+    <script>
+
+      var pants = [28,30,32];
+      var obj = {name ; 'kim', age : 20}
+
+      for (var key in obj){
+        
+      }
+
+      formInput = document.querySelector(".form-select")
+
+      formInput.addEventListener("input",function(){
+      var value = document.querySelectorAll(".form-select")[0].value; 
+      var select = document.querySelectorAll(".form-select");
+      if(value == "셔츠"){
+        select[1].classList.remove("form-hide");
+        
+        var 템플릿 =  `<option>95</option>
+                      <option>100</option>`;
+        
+        document.querySelectorAll('.form-select')[1].innerHTML = 템플릿;
+
+      }else if(value == "바지"){
+        document.querySelectorAll('.form-select')[1].classList.remove("form-hide");
+        document.querySelectorAll('.form-select')[1].innerHTML = "";
+        pants.forEach(function(a,i){
+          $('.form-select').eq(1).append(`<option>${i}</option>`);
+        });
+
+      }else if(value == "모자"){
+        select[1].classList.add("form-hide");
+      }
+    })
+
+    var a = document.createElement('p');
+    a.innerHTML = "안녕";
+    document.querySelector('#test').appendChild(a);
+
+    var a = '<p>안녕</p>';
+    document.querySelector('#test').insertAdjacentHTML('beforeend',a);
+    </script>
+  </body>
+      <style>
+        .form-hide{
+          display : none;
         }
       </style>
