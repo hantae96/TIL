@@ -66,6 +66,31 @@
   <button class ="slide-right">></button>
 
   <div style = "height: 1000px;"></div>
+  
+  <div class = "container mt-3">
+    <div class = "card p-3">
+      <span class = "name">상품명</span>
+      <span class = "price">가격</span>
+    </div>
+  </div>
+
+  <form class="container my-5 form-group">
+    <p>상품선택</p>
+    <select class="form-select mt-2">
+      <option>모자</option>
+      <option class = "select-shirt">셔츠</option>
+    </select>
+  
+    <div class="select-size">
+      <select class="form-select mt-2 form-hide">
+        <option>90</option>
+        <option>95</option>
+        <option>100</option>
+        <option>105</option>
+      </select>
+    </div>
+
+</form>
 
   
     
@@ -190,12 +215,15 @@
         // e.curentTarget; // 이벤트리스너 달린 곳
         // e.preventDefault(); // 이벤트 기본동작을 막아줌
         // e.stopPropagation(); //
-
-        if(e.target ==  document.querySelector('.black-bg')){
-          document.querySelector('.black-bg').classList.remove('show-modal');
-        }
       })
 
+      var car2 = {name : '소나타',price : [50000,30000,40000]}
+      
+      document.querySelector('.name').innerHTML = car2['name'];
+      document.querySelector('.price').innerHTML = car2['price'][1];
+
+
+      if ()
       </script>
     
     </body>

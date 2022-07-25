@@ -68,3 +68,7 @@
   width : 100%;
   background-color: black;
 }
+
+.select-size {
+  display: none;
+}
