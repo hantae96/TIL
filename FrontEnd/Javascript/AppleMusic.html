@@ -24,6 +24,7 @@
     <script>
         $(window).scroll(function(){
             // 400~600으로 변화한다
+            // 900~1400
             // y = a*x+b
             // 1 = 400a + b
             // 0 = 900a + b
@@ -34,8 +35,15 @@
             console.log(x);
             var y = (-1/500)*x + 1100/500; 
             var z = (-1/5000)*x + 565/500;
+            
             document.querySelectorAll(".card-box")[0].style.opacity = y;
             document.querySelectorAll(".card-box")[0].style.transform = `scale(${z})`;
+
+            var y = (-1/500)*x + 2100/500; 
+            var z = (-1/5000)*x + (5900/5000);
+            document.querySelectorAll(".card-box")[1].style.opacity = y;
+            document.querySelectorAll(".card-box")[1].style.transform = `scale(${z})`;
+
             
         });
     </script>

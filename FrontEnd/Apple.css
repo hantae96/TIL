@@ -13,4 +13,9 @@
     position: sticky;
     top: 400px;
     margin-top: 200px;
+    transition: all 1s;
+  }
+
+  .change {
+    transform: scale(0.9);
   }

@@ -217,15 +217,9 @@
         // e.stopPropagation(); //
       })
 
-      var car2 = {name : '소나타',price : [50000,30000,40000]}
-      
-      document.querySelector('.name').innerHTML = car2['name'];
-      document.querySelector('.price').innerHTML = car2['price'][1];
-
-
-      if ( $('.form-select').eq(0).val()){
-        $('.form-select').eq(1).removeClass('form-hide');
-      }
+    $(".slide-box").eq(0).on('mousemove',function(e){
+      console.log(e.clientX)
+    })
       </script>
     
     </body>

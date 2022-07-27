@@ -1,0 +1,45 @@
+div {
+    box-sizing: border-box;
+}
+
+.container-fluid a {
+    color : white
+
+}
+
+.input-btn{
+    margin-left : 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+#card-container{
+    display: flex;
+    justify-content: space-between;
+    padding-left: 10%;
+    padding-right: 10%;
+}
+
+.card-title{
+    margin-bottom: 0px;
+}
+
+.card-brand{
+    font-size : 8px;
+}
+
+.cart{
+    background-color: grey;
+    padding: 20px;
+    margin: auto;
+    margin-top: 20px;
+    width : 80vw;
+    height: 350px;
+}
+
+.dragArea{
+    background-color: black;
+    margin: auto;
+    width : 90%;
+    height: 90%;
+}
