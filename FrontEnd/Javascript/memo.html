@@ -21,6 +21,7 @@
   <button class = "btn btn-danger">정렬</button>
   <button class = "btn btn-danger">문자열 다나가 순 정렬</button>
   <button class = "btn btn-danger">6만원 이하 상품만 보기</button>
+ 
 
 </div>
   <script>
@@ -33,12 +34,14 @@
         function makehtml(data){
         data.forEach((element,i)=>{
         var template = `<div class="col-sm-4">
-                        <img src="https://via.placeholder.com/600" class="w-100">
-                        <h5>${element.title}</h5>
-                        <p>가격 :${element.price}</p>
+                          <img src="https://via.placeholder.com/600" class="w-100">
+                          <h5>${element.title}</h5>
+                          <p>가격 :${element.price}</p>
+                          <button id="cart-button" class = "btn btn-danger">구매하기</button>
                       </div>`
                           
         document.querySelector(".row").insertAdjacentHTML('beforeend',template);
+        
         })
       }
       
@@ -101,9 +104,21 @@
       document.querySelectorAll('.btn')[0].style.display = "none";
     }
   })
-
-      
-   
+  localStorage.clear()
+  document.querySelector("#cart-button").addEventListener("click",
+  function(){
+    var name = document.querySelector("#cart-button").previousSibling.previousElementSibling.previousElementSibling.innerText;
+    if(localStorage.length == 0){
+      name = JSON.stringify([name])      
+      localStorage.setItem("cart",name);
+    }else{
+      var temp = localStorage.getItem('cart');
+      var tempArr = JSON.parse(temp);
+      tempArr.push(name)
+      name = JSON.stringify(tempArr)
+      localStorage.setItem("cart",tempArr);
+    }
+  })
 
 
   
