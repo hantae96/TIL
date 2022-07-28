@@ -54,12 +54,11 @@
     <script>
             $.get("./Javascript/file/store.json")
             .done((data)=>{
-                
-                for(let i= 0;i<data.products.length;i++){
-                                    
-                    var cardTemplate = `<div class="card" style="width: 18rem;">
+                products = data.products;
+                for(let i= 0;i<data.products.length;i++){                                   
+                    var cardTemplate = `<div class="card"; style="width: 18rem"; draggable="true" data-id="${data.products[i].id}" >
                                             <img src="./Javascript/file/pr${i+1}.JPG" class="card-img-top" alt="${i}">
-                                            <div class="card-body">
+                                            <div class="card-body";>
                                                 <p class="card-title"><strong>${data.products[i].title}</strong></p>
                                                 <p class="card-brand">${data.products[i].brand}</p>
                                                 <p class="card-price">${data.products[i].price}</p>
@@ -74,15 +73,46 @@
                 console.log("요청 실패");
             });
 
-            input.oninput = function(){
-                console.log(input.value);
-                /// 인풋 벨류가 프로덕트 이름 안에 있으면
-                // html을 전부지우고
-                // 해당하는 card 템플릿만 띄운다. 
-            }
+            document.querySelector("#input").addEventListener("input",function(){
+              let 검색어 = document.querySelector("#input").value;
+
+              let newProducts = products.filter((a)=>{
+                return a.title.includes(검색어) || a.brand.includes(검색어)
+              });
+
+              console.log(newProducts);
+
+              $('#card-container').html('');
+              newProducts.forEach((element,i) => {
+                $('#card-container').append(`<div class="card" style="width: 18rem; draggable="true" data-id="${element.id}">
+                                            <img src="./Javascript/file/pr${i+1}.JPG" class="card-img-top" alt="${i}">
+                                            <div class="card-body">
+                                                <p class="card-title"><strong>${element.title}</strong></p>
+                                                <p class="card-brand">${element.brand}</p>
+                                                <p class="card-price">${element.price}</p>
+                                                <button class = "btn btn-dark" type = "submit">담기</button>
+                                            </div>
+                                        </div>`)
+              });
+            })
+
+            $('.card').on('dragstart', function(e){
+              e.originalEvent.dataTransfer.setData('id', e.target.dataset.id)
+            });
+
+            $('.dragArea').on('dragover', function(e){
+              e.preventDefault();
+            });
+
+            $('.dragArea').on('drop', function(e){
+
+              let productId = e.originalEvent.dataTransfer.getData('id');
+              console.log(productId);
+            });
+
+                  
             
 
-            // });
     </script>
 </body>
 </html>
