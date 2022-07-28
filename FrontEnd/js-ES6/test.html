@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id = "버튼">버튼임</button>
+
+    <script>
+
+        // var 어레이 = ['hello','world'];
+        // var test = [...어레이];
+        
+        // console.log(test[1]+" "+test[0]);
+
+        // var 문자 = "hello";
+        
+        // var a = [1,2,3];
+        // var b = [...a];
+
+        // a[3] = 4;
+        // console.log(a);
+        // console.log(b);
+        // console.log(...문자)
+
+        //...
+        // Spread Operator : 반복가능한 객체를 개별 요소로 분리하는 연산자
+        
+        var arr1  = [1,2,3,4,5];
+        // 그냥 [arr1,6,7,8,9] 하면 arr1 객체가 그대로 들어감
+        var arr2 = [...arr1,6,7,8,9];
+
+        arr2.forEach(element => {
+            console.log(element)
+        });
+    
+        var arr1 = [1,2,3];
+        var arr2 = [4,5,6];
+        
+        var arr = arr1.concat(arr2);
+        // console.log(arr);
+
+        var arr1 = [1,2,3];
+        var arr2 = [4,5,6];
+
+        var arr = [...arr1,...arr2];
+        console.log(arr);
+    </script>
+</body>
+</html>
