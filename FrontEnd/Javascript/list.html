@@ -12,57 +12,25 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 
 </head>
-  <body class = "">
- 
+  <body>
   
-    <div class="card-group container">
-        <div class="card">
-          <img src="https://via.placeholder.com/600">
-          <div class="card-body">
-            <h5>Card title</h5>
-            <p>가격 : 70000</p>
-            <button class="btn btn-danger">주문하기</button>
-          </div>
-        </div>
-        <div class="card">
-          <img src="https://via.placeholder.com/600">
-          <div class="card-body">
-            <h5>Card title</h5>
-            <p>가격 : 70000</p>
-            <button class="btn btn-danger">주문하기</button>
-          </div>
-        </div>
-        <div class="card">
-          <img src="https://via.placeholder.com/600">
-          <div class="card-body">
-            <h5>Card title</h5>
-            <p>가격 : 70000</p>
-            <button class="btn btn-danger">주문하기</button>
-          </div>
-        </div>
-      </div>
-
-      <form class="container my-5 form-group">
-        <p>상품선택</p>
-        <select class="form-select mt-2">
-          <option>모자</option>
-          <option>셔츠</option>
-        </select>
-    </form>
-      
       <script>
-        var products = [
-          { id : 0, price : 70000, title : 'Blossom Dress' },
-          { id : 1, price : 50000, title : 'Springfield Shirt' },
-          { id : 2, price : 60000, title : 'Black Monastery' }
-        ];
+        class 부모 {
+          constructor(aaaaaaaaa){
+            this.name = "KIM";
+            // this.sayHi = function(){
+            //   console.log('hello')
+            }
+            
+            sayHi(){
+              console.log('aaaaaaaaa')
+            }
+          }
+        
 
-       
-        var cardBody= document.querySelectorAll(".card-body")
-        for(let i = 0; i<cardBody.length;i++){
-        cardBody[i].childNodes[1].innerHTML = products[i].title;
-        cardBody[i].childNodes[3].innerHTML = "가격은 " + (products[i].price);
-        }
+        var 자식 = new 부모("aaaaaaaaaaa");
+        자식.__proto__;
+        Object.get
         
       </script> 
     
