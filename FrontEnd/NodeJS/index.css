@@ -1,0 +1,25 @@
+div{
+    box-sizing: border-box;
+}
+
+.navbar navbar-dark bg-dark fixed-top{
+    position: sticky;
+}
+
+.mainTemplete{
+    padding: 50px;
+    width : 100vw;
+    height: 100vh;
+}
+
+.jumbotron{
+    margin-top: 5%;
+}
+
+.form-template{
+    display: flex;
+    flex-direction: column;
+}
+
+
+
