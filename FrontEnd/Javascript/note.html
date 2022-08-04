@@ -10,25 +10,34 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 </head>
 <body>
-  <button id = "버튼">버튼이에요</button>
     <script>
-        // document.getElementById("버튼").addEventListener("click",
-        // function(){
-        //     setTimeout(() => {console.log(this.innerHTML)},2000)
-        // })
-        class 부모 {
-            constructor(){
-                this.name = "Kim";
-                
-                }
-                sayHi(){
-                    console.log("hello ")
-            }
+        var arr = [2,3,4];
+        
+        var [a,b,c = 10] = [2,3];
+
+        var obj = {name : 'kim', age : 30};
+        var name = obj.name;
+        var age = obj.age;
+        
+
+        var {name,age} = {name:'kim',age : 30};
+        var {name : 나이 = 'park'} = {name : 'kim'};
+
+        
+        var name = "kim";
+        var age = 30;
+        var obj = {name : name, age : age};
+        var obj = {name,age};
+
+        var obj = {name : 'Kim' , age : 30};
+        
+        function 함수({name,age}){
+            console.log(name);
+            console.log(name);
         }
-        var 자식 = new 부모();
-        자식.sayHi();
-        자식.__proto__;
-        Object.getPrototypeOf(자식);
+        
+        함수(obj);
+
     </script>
 </body>
 </html>

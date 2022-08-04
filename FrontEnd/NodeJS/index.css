@@ -21,5 +21,6 @@ div{
     flex-direction: column;
 }
 
-
-
+.btn btn-danger{
+    margin-top: 100px;
+}

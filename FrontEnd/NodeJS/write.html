@@ -17,13 +17,19 @@
     
     <div class="mainTemplete">
     
-        <form class = "form-template">
+        <form action = "/add" method = "POST" class = "form-template">
             <h2>기록해도 안할 거 알지만</h2>
             <p>오늘의 할일</p>
-            <input type="text" placeholder="오늘의 할일">
+            <input type="text" placeholder="오늘의 할일" name = "title">
+            
+            <p>Due Date</p>
+            <input type="date" placeholder="Date" name = "date">
+
             <p>세부내용</p>
-            <textarea placeholder="세부내용"></textarea>
+            <textarea placeholder="세부내용" name = "detailText"></textarea>
+            <button type="submit" class="btn btn-danger">Submit</button>
         </form>
+
     </div>
   </body>
 </html>
