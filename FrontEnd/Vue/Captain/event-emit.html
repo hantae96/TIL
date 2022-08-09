@@ -29,7 +29,7 @@
 
         var appContent = {
             // click 하면 addNumber라는 이벤트를 발생시킨다.
-            template : '<button v-on:click="addNumber">add</button>',
+            template : '<button @click="addNumber">add</button>',
             methods : {
                 // addNumber는 상위 컴포넌트에 "plus"라는 이벤트를 발생을 알려준다.
                 addNumber : function(){
