@@ -1,0 +1,15 @@
+#1 NO
+#2 YES
+#3 YES
+#4 NO
+#5 YES
+#6 YES
+#7 NO
+#8 NO
+#9 YES
+#10 NO
+#11 YES
+#12 NO
+#13 NO
+#14 NO
+#15 NO
