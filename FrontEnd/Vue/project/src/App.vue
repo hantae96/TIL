@@ -8,11 +8,12 @@
   
 <DiscountPage/>
 
+<!-- props 문법 -->
 <ModalPage v-bind:dataSet="dataSet" v-bind:누른거 = "누른거" v-bind:모달창열렸니 = "모달창열렸니"/>
+<!-- step1 : 보낼 데이터 부모에서 전송 <ModalPage :데이터이름작명 = "실제 데이터 이름"/>  -->
 
 <!-- 카드 소개 페이지 컴포넌트화 -->
-  <cardPage v-bind:data="dataSet[i]" v-for = "(value,i) in dataSet" :key="i"/>
-
+<cardPage @openModal ="모달창열렸니 = true; 누른거 = i" v-bind:data="dataSet[i]" v-for = "(value,i) in dataSet" :key="i"/>
 <DiscountPage/>
 </div>
 </template>
@@ -20,7 +21,7 @@
 <script>
 // 데이터 셋 받아옴
 import data from "./assets/oneroom.js";
-import DiscountPage from "./Discount-page.vue";
+import DiscountPage from "./components/Discount-page.vue";
 import ModalPage from "./Modal-page.vue";
 import cardPage from "./card-page.vue";
 
@@ -41,15 +42,20 @@ export default {
     }
   },
   methods :{
+    // 메소드 선언
     increase(i){
       this.신고수[i]++;
     },
+    test(){
+      console.log(this.메뉴들[1])
+    }
   },
   components: {
     // 외부에서 받아온 컴포넌트를 내부 컴포넌트로 등록
     DiscountPage: DiscountPage,
-    ModalPage : ModalPage,
-    cardPage : cardPage,
+    ModalPage: ModalPage,
+    cardPage: cardPage,
+  
 }
 }
 </script>
