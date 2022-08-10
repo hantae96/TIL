@@ -9,11 +9,11 @@
 <DiscountPage/>
 
 <!-- props 문법 -->
-<ModalPage v-bind:dataSet="dataSet" v-bind:누른거 = "누른거" v-bind:모달창열렸니 = "모달창열렸니"/>
+<ModalPage v-bind:dataSet="dataSet" v-bind:누른거 = "누른거" v-bind:모달창열렸니 = "모달창열렸니" @modalClose = "모달창열렸니 = false"/>
 <!-- step1 : 보낼 데이터 부모에서 전송 <ModalPage :데이터이름작명 = "실제 데이터 이름"/>  -->
 
 <!-- 카드 소개 페이지 컴포넌트화 -->
-<cardPage @openModal ="모달창열렸니 = true; 누른거 = i" v-bind:data="dataSet[i]" v-for = "(value,i) in dataSet" :key="i"/>
+<cardPage @openModal ="모달창열렸니 = true; 누른거 = $event" v-bind:data="dataSet[i]" v-for = "(value,i) in dataSet" :key="i"/>
 <DiscountPage/>
 </div>
 </template>
@@ -71,7 +71,9 @@ div {
 .black-bg{
   width : 100%; height : 100%;
   background : rgba(0,0,0,0.5);
-  position: fixed; padding: 20px;
+  position: fixed; 
+  padding: 20px;
+  top : 0px;
 }
 
 .white-bg{
@@ -80,7 +82,7 @@ div {
   left : 50%;
   transform: translate(-50%, 0%);
   width : 80%;
-  height: 50%;
+  height: 80%;
   background : white;
   padding: 20px;
   border-radius: 5%;
