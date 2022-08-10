@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link href = "AppleMusic.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+
+</head>
+  <body>
+    <div class="black-bg">
+        <div data-test = "test" class="white-bg show-modal">
+            모달창내용
+        </div>
+    </div>
+    
+    <div class="container mt-3">
+        <div class="card p-3">
+          <span>상품명</span>
+          <span>가격</span>
+        </div>
+      </div>
+
+
+      <form class="container my-5 form-group">
+        <p>상품선택</p>
+        <select class="form-select mt-2">
+          <option>모자</option>
+          <option>셔츠</option>
+          </select>
+        <select class="form-select mt-2 form-hide">
+            <option>95</option>
+            <option>100</option>
+          </select>
+      </form>
+    </form>
+
+
+    <div id="test"></div>
+    <script>
+        document.querySelector('.black-bg').addEventListener('click',function(e){
+            if(e.target == this){
+                document.querySelector('.white-bg').classList.remove('show-modal');
+            }
+        })
+
+        var formSelector = document.querySelectorAll('.form-select')[0]
+        formSelector.addEventListener("input",
+        function(){
+            var value = this.value;
+            console.log(value);
+        });
+    
+        var a = document.createElement('p');
+        a.innerHTML = "안녕";
+        document.querySelector("#test").appendChild(a);
+    
+        
+        let 변수 = 2+2;
+        switch(변수){
+            case 3:
+                alert("")
+        }
+
+    </script> 
+
+    
+    
+    
+    </body>
+  
