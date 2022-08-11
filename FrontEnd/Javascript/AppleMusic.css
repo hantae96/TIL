@@ -1,0 +1,21 @@
+.black-bg{
+    background-color: black;
+    opacity: 0.5;
+    width: 500px;
+    height: 500px;
+    margin: auto;
+    padding-top: 60px;
+}
+
+.white-bg{
+    background-color: grey;
+    width: 80%;
+    height: 80%;
+    margin: auto;
+    display: none;
+    
+}
+
+.show-modal{
+    display: block;
+}

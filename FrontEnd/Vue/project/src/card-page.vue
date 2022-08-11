@@ -3,7 +3,7 @@
   <div class = "salePage">
     <img :src = "data.image" class = "room-img">
 <!-- 클릭 이벤트가 발생하면 모달창을 띄운다. 추가적으로 누른거 변수에다가 i를 갱신하면 몇번째 모달창을 눌렀는 지 알 수 있다. -->
-        <h4>{{data.title}}</h4>   
+        <h4 @click = "send">{{data.title}}</h4>   
         <p>{{data.price}}원</p>
   </div>
 </template>
@@ -15,6 +15,12 @@ export default {
         data : Object,
         누른거 : Number,
         모달창열렸니 : Boolean,
+    },
+    methods : {
+        send(){
+            //$emit을 함수안에서 쓰고 싶으면 this를 붙인다.
+            this.$emit('openModal',this.data.id)
+        }
     }
 }
 </script>

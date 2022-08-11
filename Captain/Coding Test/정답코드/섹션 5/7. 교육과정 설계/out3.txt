@@ -1,0 +1,8 @@
+#1 NO
+#2 YES
+#3 NO
+#4 YES
+#5 NO
+#6 YES
+#7 NO
+#8 YES
