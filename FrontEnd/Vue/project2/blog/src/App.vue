@@ -1,4 +1,5 @@
 <template>
+<!-- 네이게이션 바 -->
 <div>
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <a class="navbar-brand" href="#">Blog</a>
@@ -9,10 +10,10 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+        <a class="nav-link"><router-link to = "/">홈페이지</router-link> <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Link</a>
+        <a class="nav-link" href="#"><router-link to = "/list">리스트페이지</router-link></a>
       </li>
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-expanded="false">
@@ -35,12 +36,29 @@
     </form>
   </div>
 </nav>
+
+
 </div>
+<div class = "test">
+  <router-view v-bind:blogData = "blogData"></router-view>
+</div>
+  <!-- <ListPage v-bind:blogData ="blogData"></ListPage> -->
+
+
+
 </template>
 
 <script>
+// import ListPage from "./components/ListPage.vue"
+import blogData from "./assets/blog"
+
 export default {
   name: 'App',
+  data(){
+    return{
+      blogData : blogData
+    }
+  },
   components: {
   }
 }
@@ -54,4 +72,5 @@ export default {
   text-align: center;
   color: #2c3e50;
 }
+
 </style>
