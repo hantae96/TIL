@@ -39,9 +39,6 @@
 
 
 </div>
-<div class = "test">
-  <router-view v-bind:blogData = "blogData"></router-view>
-</div>
   <!-- <ListPage v-bind:blogData ="blogData"></ListPage> -->
 
 
