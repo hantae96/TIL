@@ -7,9 +7,15 @@
         </div>
         
 
+        <!-- 글작성페이지 -->
+        <div v-if = "step == 1">
+            <div class="upload-image" v-bind:style = "`background-image : url(${img})`"></div>
+               <textarea @input="send($event)" class="write-box">write!</textarea> 
+        </div>      
+
         <!-- 필터선택페이지 -->
         <div v-if = "step == 2">
-            <div class="upload-image"></div>
+            <div class="upload-image" v-bind:style = "`background-image : url(${img})`" ></div>
             <div class="filters">
                 <div class="filter-1"></div>
                 <div class="filter-1"></div>
@@ -18,14 +24,6 @@
                 <div class="filter-1"></div>
             </div>
         </div>
-
-        <!-- 글작성페이지 -->
-        <div v-if = "step == 1">
-            <div class="upload-image"></div>
-            <div class="write">
-                <textarea class="write-box">write!</textarea>
-            </div>  
-        </div>      
     </div>
 </template>
 <script>
@@ -37,9 +35,15 @@ export default{
     },
     props : {
         UserData : Array,
-        step : Number
+        step : Number,
+        img : String,
+    },
+    methods : {
+        send(event){
+            this.$emit('sendText',event.target.value);
+        }
     }
-}
+    }
 </script>
 <style>
 .upload-image{

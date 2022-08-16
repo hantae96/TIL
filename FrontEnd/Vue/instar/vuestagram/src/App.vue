@@ -5,7 +5,8 @@
         <li>Cancel </li>
       </ul>
       <ul class="header-button-right">
-        <li>Next</li>
+        <li v-if = "step ==2" @click = "step = 1">Next</li>
+        <li v-if = "step ==1" @click = "publish()">Post</li>
       </ul>
       <img src="./assets/logo.png" class="logo" />
     </div>
@@ -18,11 +19,14 @@
 
     <!-- 상위 하위 컴포넌트가 어떻게 연결되 있는지 확인!! -->
     <!-- 무지성으로 props 전송하지말자 -->
-    <ContainerPage v-bind:UserData = "UserData" v-bind:step = "step"/>
+    <!-- custom event는 보낸 상위 컴포넌트에서 받아야 한다!! -->
+    <ContainerPage v-bind:UserData = "UserData" v-bind:step = "step" v-bind:img = "img" @sendText ="context=$event" />
     <button @click ="more()">더보기</button>
 
     <div class="footer">
       <ul class="footer-button-plus">
+        <!-- 인풋을 여러개 받고 싶으면 멀티플 선택창에서 accept = "image/*" -->
+        <!-- <input @change = "upload" multiple type="file" id="file" class="inputfile" /> -->
         <input @change = "upload" type="file" id="file" class="inputfile" />
         <label for="file" class="input-plus">+</label>
       </ul>
@@ -54,6 +58,8 @@ export default {
       test : 1,
       count : 0,
       step : 0,
+      img : "",
+      context : '',
 
     }
   },
@@ -75,7 +81,22 @@ export default {
     },
     upload(e){
       let file = e.target.files;
-      console.log(파일)
+      this.step = 2;
+      this.img= URL.createObjectURL(file[0]);
+    },
+    publish(){
+      let newPost =   {
+            name: "Karina",
+            userImage: "https://placeimg.com/100/100/arch",
+            postImage: this.img,
+            likes: 36,
+            date: "May 15",
+            liked: false,
+            content: this.context,
+            filter: "perpetua"
+          }
+      this.UserData.unshift(newPost);
+      this.step = 0;
     }
   }
 }
