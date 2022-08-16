@@ -23,7 +23,7 @@
 
     <div class="footer">
       <ul class="footer-button-plus">
-        <input type="file" id="file" class="inputfile" />
+        <input @change = "upload" type="file" id="file" class="inputfile" />
         <label for="file" class="input-plus">+</label>
       </ul>
     </div>
@@ -72,6 +72,10 @@ export default {
       .catch((error)=>{
         console.log(error)
       })
+    },
+    upload(e){
+      let file = e.target.files;
+      console.log(파일)
     }
   }
 }
