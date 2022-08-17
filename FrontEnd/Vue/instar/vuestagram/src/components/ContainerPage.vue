@@ -17,21 +17,29 @@
         <div v-if = "step == 2">
             <div class="upload-image" v-bind:style = "`background-image : url(${img})`" ></div>
             <div class="filters">
-                <div class="filter-1"></div>
-                <div class="filter-1"></div>
-                <div class="filter-1"></div>
-                <div class="filter-1"></div>
-                <div class="filter-1"></div>
+                <FilterBox v-for = "(item,i) in filter" :key = "i" v-bind:img="img" v-bind:item="item">
+                    {{item}}
+                </FilterBox>
+
             </div>
         </div>
     </div>
 </template>
 <script>
 import PostSection from './PostSection.vue'
+import FilterBox from './FilterBox.vue';
 
 export default{
+    data(){
+        return {
+            filter : [ "aden", "_1977", "brannan", "brooklyn", "clarendon", "earlybird", "gingham", "hudson", 
+                    "inkwell", "kelvin", "lark", "lofi", "maven", "mayfair", "moon", "nashville", "perpetua", 
+                        "reyes", "rise", "slumber", "stinson", "toaster", "valencia", "walden", "willow", "xpro2"],
+        }
+    },
     components : {
-        PostSection : PostSection
+        PostSection : PostSection,
+        FilterBox : FilterBox
     },
     props : {
         UserData : Array,
@@ -53,6 +61,7 @@ background: cornflowerblue;
 background-size : cover;
 }
 .filters{
+display: flex;
 overflow-x:scroll;
 white-space: nowrap;
 }
