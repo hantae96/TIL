@@ -1,5 +1,6 @@
 {
   "dependencies": {
-    "finalhandler": "^1.2.0"
+    "finalhandler": "^1.2.0",
+    "mitt": "^3.0.0"
   }
 }

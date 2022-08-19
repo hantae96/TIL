@@ -10,19 +10,22 @@
       </ul>
       <img src="./assets/logo.png" class="logo" />
     </div>
-
     <div class = "tab-container">
       <button class="btn-hover color-1"  @click = "step = 0">post</button>
       <button class="btn-hover color-2" @click = "step = 1">write</button>
       <button class="btn-hover color-3" @click = "step = 2">filter</button>
     </div>
 
+    <!-- vuex 문법 -->
+    <!-- <h4>안녕 {{ $store.state.name }}</h4> -->
+    <!-- <button @click = "store.commit('이름변경')">버튼</button> -->
+    
     <!-- 상위 하위 컴포넌트가 어떻게 연결되 있는지 확인!! -->
     <!-- 무지성으로 props 전송하지말자 -->
     <!-- custom event는 보낸 상위 컴포넌트에서 받아야 한다!! -->
     <ContainerPage v-bind:UserData = "UserData" v-bind:step = "step" v-bind:img = "img" @sendText ="context=$event" />
     <button @click ="more()">더보기</button>
-
+    
     <div class="footer">
       <ul class="footer-button-plus">
         <!-- 인풋을 여러개 받고 싶으면 멀티플 선택창에서 accept = "image/*" -->
@@ -66,6 +69,14 @@ export default {
   components: {
     ContainerPage : ContainerPage,
   },
+
+  mounted(){
+    // a 이벤트 안에 들어있는 데이터
+    this.emitter.on('작명',(a)=>{
+      console.log(a)
+    });
+  },
+
   methods : {
     more(){
       axios.get(`https://codingapple1.github.io/vue/more${this.count}.json`)

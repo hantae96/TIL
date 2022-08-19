@@ -3,7 +3,7 @@
     <!-- class 바인딩 -->
     <slot></slot>
     <div :class = "item" class="filter-item" :style="`background-image:url(${img})`"></div> 
-    
+    <button @click = "fire">버튼</button>
   </div>
 </template>
 
@@ -13,8 +13,17 @@ export default {
   props: {
     img : String,
     item : String,
-  }
+  },
+  methods : {
+    fire(){
+      // this.emitter.emit('작명','데이터')
+      this.emitter.emit('작명','전달받아라');
+    }
+  },
 }
+
+
+
 </script>
 <style scoped>
     .filter-item {
