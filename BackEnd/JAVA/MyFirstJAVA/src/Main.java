@@ -5,13 +5,23 @@ import java.util.*;
 
 public class Main {
     public static void main(String[] args) {
-        System.out.println("Hello world!");
-        Scanner scanner = new Scanner(System.in);
-                String input = scanner.nextLine();
-                int num = Integer.parseInt(input);
-                System.out.println((num));
 
+        int[] numArr = new int[10];
+        int[] counter = new int[10];
 
-
-            }
+        for(int i = 0; i<numArr.length; i++){
+            numArr[i] = (int)(Math.random() * 10);
         }
+
+        System.out.println(Arrays.toString(numArr));
+
+        for (int j : numArr) {
+            counter[j]++;
+            System.out.printf("%d\t",j);
+        }
+
+        System.out.println(Arrays.toString(counter));
+
+    }
+
+}
