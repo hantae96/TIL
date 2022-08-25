@@ -22,12 +22,9 @@ public class CardTest {
         System.out.println("ch6.Card-width : "+Card.width);
         System.out.println("ch6.Card-width : "+Card.height);
 
-        int add (int x=1, int y=2){
-            int result = x + y;
-            return result;
         }
     }
-}
+
 
 
 class Card {
