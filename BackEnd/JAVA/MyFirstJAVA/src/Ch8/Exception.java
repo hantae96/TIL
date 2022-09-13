@@ -1,9 +1,8 @@
 package Ch8;
 import java.io.*;
-import java.rmi.server.ExportException;
 
-public class Exception {
-    public Exception(String 고의로_발생시켰음) {
+public class Exception extends Throwable {
+    public Exception() {
     }
 
     public static void main(String [] args){
