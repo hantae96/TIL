@@ -1,24 +1,21 @@
 package ch9;
-
-import ch7.InterfaceTest;
-
-import java.util.ArrayList;
+import java.util.Scanner;
+import java.util.Arrays;
 
 public class RoundTest {
     public static void main(String[] args){
-/*
-        System.out.println("i="+ Integer.parseInt("100"));
-*/
-        System.out.println("i="+ Integer.parseInt("100",2));
-        System.out.println("i="+ Integer.parseInt("100",16));
-        System.out.println("i="+ Integer.parseInt("100",8));
+        Scanner sc = new Scanner(System.in);
 
-        ArrayList<Integer> list = new ArrayList<Integer>();
-        list.add(100);
-        list.add(new Integer(100));
+        int A = sc.nextInt();
+        String B = sc.next();
+//        System.out.println(B.getClass().getName());
+        int res = 0;
+        for (int i =0; i<A;i++){
+//            System.out.println(B[i]);
+            res += B.charAt(i) - '0';
+        }
 
-//        Integer i = list.get(0);
-//        int i = list.get(0).intValue();
-        int i = list.get(0);
+        System.out.println(res);
+
         }
     }
