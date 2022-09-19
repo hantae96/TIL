@@ -17,7 +17,8 @@ def count_value(x,y,bound):
                 count = False
                 break
     if count:
-        print(martix[x][y])
+        # 봉우리 확인
+        # print(martix[x][y])
         return 1
     else:
         return 0
