@@ -1,26 +1,16 @@
-N = 8
-M = 32
-
-input1 = "23 87 65 12 57 32 99 81"
-
-arr = list(map(int,input1.split()))
-
-arr = sorted(arr)    
-
-print(arr)
-
-def binary_search(arr):
-    while arr:
-        mid = len(arr)//2
-        
-        if M == arr[mid]:
-            return mid
-        elif M > arr[mid]:
-            arr = arr[mid+1:]
-        else:
-            arr = arr[:mid]
-            
-print(binary_search(arr))
-
-        
-    
+import sys
+sys.stdin = open("input.txt","r")
+n,m = map(int,input().split())
+a = list(map(int,input().split()))
+a.sort()
+lt = 0
+rt = n-1
+while lt <=rt:
+    mid = (lt+rt)//2
+    if a[mid] == m:
+        print(mid+1)
+        break
+    elif a[mid]>m:
+        rt = mid-1
+    else:
+        lt = mid+1

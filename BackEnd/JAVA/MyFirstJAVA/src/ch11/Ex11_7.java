@@ -1,29 +1,41 @@
 package ch11;
 
+import java.lang.reflect.Array;
 import java.util.*;
 
 public class Ex11_7 {
-    public static void main(String[] args){
-        String[] strArr = {"cat","Dog","lion","tiger"};
+    public static void main(String[] args) {
+       ArrayList list1 = new ArrayList(10);
+       list1.add(new Integer(5));
+       list1.add(4);
+       list1.add(3);
+       list1.add(0);
+       list1.add(2);
+       list1.add(1);
 
-        Arrays.sort(strArr);
-        System.out.println("strArr = " + Arrays.toString(strArr));
+       ArrayList list2 = new ArrayList(list1.subList(1,4));
+       print(list1,list2);
 
-        Arrays.sort(strArr,String.CASE_INSENSITIVE_ORDER);
-        System.out.println("strArr="+ Arrays.toString(strArr));
+       Collections.sort(list1);
+       Collections.sort(list2);
+       print(list1,list2);
 
-        Arrays.sort(strArr,new Descending());
-        System.out.println("strArr=" + Arrays.toString(strArr));
+       System.out.println("list1.containsAll(list2):"+list1.containsAll(list2));
+
+       list2.add("B");
+       list2.add("C");
+       list2.add("A");
+       print(list1,list2);
+
+       list2.set(3,"AA");
+       print(list1,list2);
+
+       System.out.println("list1.retainAll(list2):" + list1.retainAll(list2));
     }
-}
 
-class Descending implements Comparator{
-    public int compare(Object o1, Object o2){
-        if(o1 instanceof Comparable && o2 instanceof Comparable){
-            Comparable c1 = (Comparable)o1;
-            Comparable c2 = (Comparable)o2;
-            return c1.compareTo(c2) * -1;
-        }
-        return -1;
+    static void print(ArrayList list1, ArrayList list2){
+        System.out.println("list1:" + list1);
+        System.out.println("list2: "+ list2);
+        System.out.println();
     }
 }
