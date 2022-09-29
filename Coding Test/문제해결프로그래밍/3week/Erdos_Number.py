@@ -35,7 +35,7 @@ for t in range(1, T+1):
                     continue
                 edge[a][b] = 1
 
-    # print(f"edge {edge}")
+    print(f"edge {edge}")
     # Erdos로부터의 거리를 저장하는 map
     graph = {a:-1 for a in nameSet}
     # print(f"graph : {graph}")
