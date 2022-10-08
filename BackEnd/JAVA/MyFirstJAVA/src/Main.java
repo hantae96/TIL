@@ -1,34 +1,39 @@
-import java.io.EOFException;
 import java.util.*;
 
 public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         int num = sc.nextInt();
-        if (num < 10){
-            num *= 10;
-        }
+        int[][] arr = new int[num][];
+        int[] person = new int[num];
+        double[] result = new double[num];
 
-        int count = 1;
-        int res = 0;
-        int a,b,tmp;
-
-        while(num!=res){
-            if (count == 1){
-                a = num/10;
-                b = num%10;
-                tmp = (a+b)%10;
-                res = (num%10)*10 + tmp;
-            }else{
-                a = res/10;
-                b = res%10;
-                tmp = (a+b)%10;
-                res = (res%10)*10 + tmp;
+//        System.out.println(Arrays.toString(arr));
+        for (int i = 0; i < arr.length; i++) {
+            int n = sc.nextInt();
+            person[i] = n;
+            arr[i] = new int[n];
+            for (int j = 0; j < n; j++) {
+                arr[i][j] = sc.nextInt();
             }
-            count++;
         }
 
+        for (int i = 0; i < arr.length; i++) {
+            int sum = 0;
+            for (int j = 0; j < arr[i].length; j++) {
+                sum += arr[i][j];
+            }
+            result[i] = (double) sum / person[i];
+        }
 
-        System.out.println(count);
+        for (int i = 0; i<arr.length;i++){
+            int count = 0;
+            for (int j = 0; j<arr[i].length;j++){
+                if(arr[i][j] > result[i]){
+                    count++;
+                }
+            }
+            System.out.printf("%.3f%%\n",(double)count/person[i]*100);
+        }
     }
 }
