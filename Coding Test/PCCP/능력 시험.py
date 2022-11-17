@@ -11,8 +11,6 @@ def DFS(level,max_sum):
                 check_list[i] = 0
     
 
-
-
 if __name__ == "__main__":
     test_case = [[40,10,10],
              [20,5,0],
