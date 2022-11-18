@@ -1,17 +1,21 @@
-def DFS(level,count):
-    global generation
-    if generation == level:
-        return count
+def backTracking(level,count):
+    if generation == 1:
+        return "Rr"
     else:
-        DFS(level-1,count/4)
-
+        parent=backTracking(level-1,count//4)
+        if parent == "Rr":
+            return child[count%4]
+        else:
+            return parent    
 
 
 
 if __name__ == "__main__":
-    bio_list = ["RR","Rr","Rr","rr"]
+    child = ["RR","Rr","Rr","rr"]
 
     generation,count = map(int,input().split())
 
-    index=DFS(generation,count)
-    bio_list[index]
+    index=backTracking(generation,count-1)
+    child[index]
+    
+    
