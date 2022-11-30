@@ -1,37 +1,35 @@
 import sys
 sys.stdin = open("Chapter_5/input.txt")
 
-
 def backTracking(x,y):
     global graph
-    global N,M
-    if (0>x or M<x) or (0>y or y>N):
-        return False
+    global n,m
 
+    if x<0 or x >= n or y<0 or y >= m:
+        return False
+    
+    # 방문하지 않았으면
     if graph[x][y] == 0:
         graph[x][y] = 1
         backTracking(x,y-1)
         backTracking(x,y+1)
         backTracking(x-1,y)
-        backTracking(x,y+1)
+        backTracking(x+1,y)
         return True
-    else:
-        return False
-
-
+    return False
 
 
 if __name__ == "__main__":
-    N,M = map(int,input().split())
-    
+    n,m = map(int,input().split())
     graph = []
-    res = 0
-    for _ in range(N):
+    count = 0
+
+    for _ in range(n):
         graph.append(list(map(int,input())))
 
-    for i in range(N):
-        for j in range(M):
+    for i in range(n):
+        for j in range(m):
             if backTracking(i,j):
-                res+=1
+                count +=1
 
-    print(res)
+    print(count)
