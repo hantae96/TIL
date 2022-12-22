@@ -1,4 +1,4 @@
-3
-3 3 6
-2 2 2
-6 2 5
+Coke Sprite
+Coke Sprite Fanta * 7-up
+Sprite Coke Sprite Coke * * 
+* * * *

@@ -1,28 +1,34 @@
+from errno import EDEADLK
 import sys
 
-sys.stdin = open("input.txt","r")
-dice_set = []
-n = int(input())
-for i in range(n):
-    dice_set.append(list(map(int,input().split())))
+sys.stdin = open("/Users/Hantae/Desktop/Programming/TIL/Coding Test/small_book/input.txt","r")
 
-result = []
+try:
+    while True:
+        can_list=list(input().split())
+        
+        i = 0        
+        result = []
 
-for dice in dice_set:
-    cnt = 0
-    same = 0
-    for i in range(len(dice)):
-        for j in range(i+1,len(dice)):
-            if dice[i] != dice[j]:
-                cnt+=1
-            else :
-                same = dice[i]
-        if cnt == 0:
-            result.append(10000 + 1000*same)
-        elif cnt == 1:
-            result.append(1000 + 100 *same)
-        else :
-            result.append(100 * max(dice))
+        while i<len(can_list):
+            if can_list[i] != "*":
+                result.append(can_list[i])
+            else:
+                j = len(result)-2
+                while j >= 0:
+                    if can_list[j] == "Coke":
+                        j -=1
+                    else:
+                        result.pop(j)
+                        break
+                    
+                
+            i+=1
+        
+        
+        print(result)
+                
+            
 
-print(result)
-print(max(result))
+except:
+    pass    
