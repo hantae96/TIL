@@ -1,7 +1,8 @@
-14
+15
 push 1
 push 2
-top
+front
+back
 size
 empty
 pop
@@ -12,4 +13,4 @@ empty
 pop
 push 3
 empty
-top
+front
