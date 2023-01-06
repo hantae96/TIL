@@ -1,5 +1,5 @@
 import sys
-sys.stdin = open("input.txt")
+#sys.stdin = open("input.txt")
 
 result = 0
 n = int(sys.stdin.readline())
