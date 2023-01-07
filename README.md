@@ -1,2 +1,1 @@
-# TIL
-Today I Learned / One day One commit
+코딩 테스트 문제 풀이 및 언어 공부 정리용 보관소
