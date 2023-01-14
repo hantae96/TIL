@@ -29,4 +29,10 @@ public class MemoryCustomerRepository implements CustomerRepository{
             }
         return dataBase.get(customerId);
         }
+
+    @Override
+    public void clearDB(){
+        dataBase.clear();
     }
+}
+
