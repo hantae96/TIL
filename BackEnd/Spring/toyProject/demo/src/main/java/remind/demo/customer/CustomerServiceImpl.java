@@ -17,6 +17,10 @@ public class CustomerServiceImpl implements CustomerService{
         return customerRepository.findById(customerId);
     }
 
+    public void findByTear(Tear tear){
+        customerRepository.findByTear(tear);
+    }
+
     boolean check(int customerId){
         return !customerRepository.getDataBase().containsKey(customerId);
     }

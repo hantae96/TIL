@@ -21,14 +21,14 @@ public class MemoryCustomerRepository implements CustomerRepository{
         return dataBase;
     }
     @Override
-    public Customer findByTear(Tear tear){
-        int customerId = 0;
-        ArrayList<Customer> tearList = new ArrayList<>();
-        for(Map.Entry<Integer,Customer> customer : dataBase.entrySet()){
-            System.out.println(customer);
+    public void findByTear(Tear tear) {
+        for (Map.Entry<Integer, Customer> customer : dataBase.entrySet()) {
+            Customer cm = customer.getValue();
+            if (cm.getTear() == tear) {
+                System.out.println(cm.getName());
             }
-        return dataBase.get(customerId);
         }
+    }
 
     @Override
     public void clearDB(){

@@ -1,6 +1,5 @@
-from itertools import combinations
+lst = [1,2,3,4]
+newlst = lst
 
-
-test = ['a','b','c']
-for i in range(len(test)):
-    print(list(combinations(test,i)))
+print(lst)
+print(newlst)
