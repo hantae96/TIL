@@ -1,27 +1,61 @@
-import java.math.BigInteger;
-public class Main {
+class ParcelService {
+    String parcel = "";
 
-    public static void main(String args[]) {
-        Loop1 : for(int i = 2;i<10;i++){
-            for(int j = 1;j<10;j++){
-                if(j==5){
-                    break Loop1;
-                }
-            }
+    ParcelService(){
+        this("기본 배송 값");
+    }
+    ParcelService(String name){
+        parcel = name;
+    }
+
+
+    public void total(boolean a,boolean b,boolean c){
+        packing(a);
+        publish(b);
+        send(c);
+
+    }
+
+    public void packing(boolean flag){
+
+        try{
+            if (flag) System.out.println("포장" + parcel);
+            else throw new Exception();
+        }catch (Exception e){
+            System.out.println("오류발생");
         }
 
-        int [] arr1 = new int[5];
 
-        String test = "MyFirstJava";
+    }
 
-        System.out.println(test.charAt(0));
-        System.out.println(test.length());
-        System.out.println(test.substring(1,3));
-        System.out.println(test.toCharArray());
+    public void publish(boolean flag) {
 
-        System.out.println(test.equalsIgnoreCase("MYFirstJava"));
+        try{
+            if (flag) System.out.println("영수증 발행"+ parcel);
+            else throw new Exception();
+        }catch (Exception e){
+            System.out.println("오류발생");
+        }
 
-        int [][] arr = new int [][] {{1,2,3},{4,5,6}};
+    }
+
+    public void send(boolean flag) {
+
+        try{
+            if (flag) System.out.println("발송" + parcel);
+            else throw new Exception();
+        }catch (Exception e){
+            System.out.println("오류발생");
+        }
+
+    }
+}
+
+
+public class Main {
+    public static void main(String[] args) {
+        ParcelService parcelService = new ParcelService();
+        parcelService.total(true,false,true);
 
     }
 }
