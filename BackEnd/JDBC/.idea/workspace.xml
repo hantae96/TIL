@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="c6959eea-4f80-42d4-8915-43befbaabf22" name="변경" comment="">
+      <change beforePath="$PROJECT_DIR$/JdbcProject/JdbcProject.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/JdbcProject/out/production/JdbcProject/Main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/JdbcProject/out/production/JdbcProject/program.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/JdbcProject/out/production/JdbcProject/program2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/JdbcProject/src/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/JdbcProject/src/com/newlecture/app/entity/Notice.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/JdbcProject/src/com/newlecture/app/service/NoticeService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/JdbcProject/src/program.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/JdbcProject/src/program2.java" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2M61pGw8OgBC3LJ3IqRc7u1ix03" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="flattenPackages" value="true" />
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "project.structure.last.edited": "전역 라이브러리",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="Application" factoryName="Application">
+      <option name="ALTERNATIVE_JRE_PATH" value="corretto-11" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
+      <option name="MAIN_CLASS_NAME" value="Main" />
+      <module name="JDBC" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="애플리케이션 수준" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="디폴트 작업">
+      <changelist id="c6959eea-4f80-42d4-8915-43befbaabf22" name="변경" comment="" />
+      <created>1677073398714</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1677073398714</updated>
+      <workItem from="1677073400014" duration="3928000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>
