@@ -2,6 +2,8 @@ package javaExample;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.stream.IntStream;
+import java.util.stream.LongStream;
 import java.util.stream.Stream;
 
 
@@ -10,27 +12,36 @@ interface Math{
     public int Calc(int first,int second);
 }
 
+class Solution {
+//    public int solution(int n){
+//        return IntStream.rangeClosed(0,n)
+//    }
+}
+
 
 public class StreamTest {
     public static void main(String[] args) {
-        String[] arr = new String[]{"가","나","다"};
-//        Stream<String> stream = Arrays.stream(arr,1,3);
+        String[] fruit = new String[]{"사과","배","포도"};
+        Stream<String> fruitStream = Arrays.stream(fruit);
+        // range 범위 지정 가능
+        Stream<String> partOfFruitStream = Arrays.stream(fruit, 1, 3);
 
-        List<String> list = Arrays.asList("a","b","c");
-        // 간편하게 자료구조.stream() 메소드를 통해서 stream 객체로 변환
-        Stream<String> stream = list.stream();
+        List<String> carList = Arrays.asList("테슬라", "포르쉐", "현대");
+        Stream<String> carStream = carList.stream();
+        Stream<String> stringStream = carList.parallelStream();
 
-        Stream<String> builerStream = Stream.<String> builder().add("Eric").add("Elena").add("Java").build();
+        Stream<String> builderStream = Stream.<String>builder().add("직접").add("하나씩").add("원하는 값 넣을 수 있다.").build();
 
-        // Supplier -> 입력값은 없고 리턴값만 있는 함수형 인터페이스
-        Stream<String> generatedStream = Stream.generate(()->"gen").limit(5);
 
-        Stream<Integer> iteratedStream = Stream.iterate(30,n->n+2).limit(5);
+        Stream<String> generate = Stream.generate(() -> "gen");
+        generate.limit(5).forEach(s-> System.out.println(s));
 
-        List<String> names = Arrays.asList("한태","소현","가영");
-        // 스트림은 일회용이다.
-        Stream<String> stream2 = names.stream().filter(name -> name.contains("태"));
+        Stream.iterate(30,n -> n+2).limit(5).forEach(s -> System.out.println(s));
 
-        Stream<String> stream3 = names.stream().map(String::toUpperCase);
+
+        IntStream intStream = IntStream.range(1,5);
+        LongStream longStream = LongStream.rangeClosed(1,5);
+
+
     }
 }
