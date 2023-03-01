@@ -12,8 +12,7 @@ public class memberServiceTest {
     @BeforeEach
     public void beforeEach(){
         AppConfig appconfig = new AppConfig();
-        MemberService memberService = appconfig.memberService();
-
+        memberService = appconfig.memberService();
     }
 
     @Test
