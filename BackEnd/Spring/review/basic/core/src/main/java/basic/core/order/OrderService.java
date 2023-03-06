@@ -1,2 +1,5 @@
-package basic.core.order;public interface OrderService {
+package basic.core.order;
+
+public interface OrderService {
+    Order createOrder(Long memberId, String itemName, int itemPrice);
 }

@@ -8,12 +8,6 @@ import java.util.stream.IntStream;
 import java.util.stream.LongStream;
 import java.util.stream.Stream;
 
-
-@FunctionalInterface
-interface Math{
-    public int Calc(int first,int second);
-}
-
 class Solution {
 //    public int solution(int n){
 //        return IntStream.rangeClosed(0,n)
