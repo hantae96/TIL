@@ -1,0 +1,14 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="DBConcept:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <module>DBConcept</module>
+        <packaging>war</packaging>
+      </options>
+    </properties>
+    <root id="archive" name="DBConcept-1.0-SNAPSHOT.war">
+      <element id="artifact" artifact-name="DBConcept:war exploded" />
+    </root>
+  </artifact>
+</component>

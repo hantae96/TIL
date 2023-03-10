@@ -2,15 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c6959eea-4f80-42d4-8915-43befbaabf22" name="변경" comment="">
-      <change beforePath="$PROJECT_DIR$/JdbcProject/JdbcProject.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JdbcProject/out/production/JdbcProject/Main.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JdbcProject/out/production/JdbcProject/program.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JdbcProject/out/production/JdbcProject/program2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JdbcProject/src/Main.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JdbcProject/src/com/newlecture/app/entity/Notice.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JdbcProject/src/com/newlecture/app/service/NoticeService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JdbcProject/src/program.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JdbcProject/src/program2.java" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/../DBConcept/src/main/java/Service.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../JAVA/MyFirstJAVA/src/inheritance06/DTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../JAVA/MyFirstJAVA/src/inheritance06/Service.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JAVA/MyFirstJAVA/src/inheritance06/DAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/../JAVA/MyFirstJAVA/src/inheritance06/DAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JAVA/MyFirstJAVA/src/inheritance06/IUserDAO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JAVA/MyFirstJAVA/src/inheritance06/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../JAVA/MyFirstJAVA/src/inheritance06/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JAVA/MyFirstJAVA/src/inheritance06/UserDAOImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JAVA/MyFirstJAVA/src/inheritance06/UserDTO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,16 +30,16 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "project.structure.last.edited": "전역 라이브러리",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;전역 라이브러리&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src" />
@@ -65,10 +65,22 @@
       <option name="presentableId" value="Default" />
       <updated>1677073398714</updated>
       <workItem from="1677073400014" duration="3928000" />
+      <workItem from="1678424013808" duration="2871000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>
