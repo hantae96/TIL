@@ -6,21 +6,24 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.util.Enumeration;
 
 
 @WebServlet(name = "requestParamServlet" ,urlPatterns = "/request-param")
 public class RequestParamServlet extends HttpServlet {
     @Override
     protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        request.getParameterNames().asIterator().forEachRemaining(paramName -> System.out.println(paramName+"="+request.getParameter(paramName)));
-        System.out.println();
+        System.out.println("[전체 파라미터 조회] 시작");
+        request.getParameterNames().asIterator().forEachRemaining(paraName -> System.out.println(paraName + request.getParameter(paraName)));
+        System.out.println("[전체 파라미터 조회] 끝");
+
+
         System.out.println("[단일 파라미터 조회]");
         String username = request.getParameter("username");
-        String age = request.getParameter("age");
-
         System.out.println("username = " + username);
+
+        String age = request.getParameter("age");
         System.out.println("age = " + age);
+        System.out.println();
 
         System.out.println("[이름이 같은 복수 파라미터 조회]");
         String[] usernames = request.getParameterValues("username");
@@ -28,6 +31,7 @@ public class RequestParamServlet extends HttpServlet {
             System.out.println("name = " + name);
         }
 
-        response.getWriter().write("ok");
+        response.getWriter().write("실행완료");
+
     }
 }
