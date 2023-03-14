@@ -1,0 +1,79 @@
+데이터베이스 테이블 : 
+IDTO를 이용하여 MemberDTO를 생성 후 MemberDTO 멤버 필드를 컬럼으로 구성한다.
+테이블 이름 : db_concept3
+
+패키지 : 
+dbConcept03.dto	
+	- MemberDTO클래스
+
+dbConcept03.view		
+	- MemberView 클래스
+
+dbConcept03.dao
+	- MemberDAO 클래스
+
+dbConcept03.run		
+	- Main 클래스
+
+## 시작용 클래스 : dbConcept03.run.Main.java
+-> view 클래스를 객체로 생성 후 mainMenu 호출
+
+## view 클래스 : dbConcept03.view.MemberView.java
+
+기본 메서드 - public
+-> mainMemu 메서드 (다음 메뉴 출력및 선택)
+	1. 회원 전체 정보 출력
+	2. 회원 정보 조회
+	3. 회원 정보 입력
+	4. 회원 정보 변경
+	5. 회원 정보 삭제
+	0. 프로그램 종료
+
+
+-> 로직은 MemberDAO클래스에서 구현할 것이며, MemberView 클래스에서는 아래와 같다.
+
+-> selectAll 메소드 (회원 전체 출력 메서드, 입출력만 담당)
+-> selectId 메소드 (회원 한명 조회 메서드, 입출력만 담당)
+-> insertMember 메소드 (회원 정보 입력 메서드, 입출력만 담당)
+-> updateMember 메소드 (회원 정보 변경 메서드, 입출력만 담당)
+-> deleteMember 메소드 (회원 정보 삭제 메서드, 입출력만 담당)
+
+## 회원정보 클래스 :  dbConcept03.dto.MemberDTO.java
+
+필드(변수) - private
+- num	 	: int	// 회원번호
+- id		: String	// 아이디
+- pw		: String	// 패스워드
+- name		: String	// 이름
+- email		: String	// 이메일
+
+기본 메소드 - public
+- getter, setter, 생성자
+
+
+## 프로그램 DAO 클래스 : dbConcept03.dao.MemberDAO.java
+
+-> 각 메서드는 데이터베이스에 접근 
+
+메서드 - public
+-> public ArrayList<MemberDTO> selectAll()  // 회원 전체 조회 메서드
+-> public MemberDTO selectId(String id)  // 회원 한명 조회 메서드
+-> public int insertMember(MemberDTO member)  //회원 입력 메서드
+-> public int updateMember(MemberDTO member) // 회원 정보 변경 메서드
+-> public int deleteMember(String id)  // 회원 정보 삭제 메서드
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
