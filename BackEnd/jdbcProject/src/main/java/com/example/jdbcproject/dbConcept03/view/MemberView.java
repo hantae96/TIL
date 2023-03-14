@@ -34,6 +34,7 @@ public class MemberView implements IView{
             } catch (Exception e) {
                 continue;
             }
+
             switch (select) {
                 case 1:
                     insertMember();
@@ -50,13 +51,18 @@ public class MemberView implements IView{
                 case 5:
                     updateMember();
                     break;
-                case 6: memberDao.exit();
-                    System.out.println("프로그램을 종료합니다.");
-                    System.exit(0);
+                case 6:
+                    disconnect();
                 default:
                     System.out.println("메뉴 확인 후 다시 입력하세요.");
             }
         }
+    }
+
+    private void disconnect() {
+        memberDao.exit();
+        System.out.println("프로그램을 종료합니다.");
+        System.exit(0);
     }
 
 
