@@ -14,6 +14,8 @@ public class MemberDAO implements IDao{
     Connection con  = null;
 
 
+
+//     생성자를 통해서 클래스 드라이버를 불러오면 오류난다..
     public MemberDAO(){
         try {
             Class.forName(driver);
@@ -33,7 +35,8 @@ public class MemberDAO implements IDao{
             String sql = "SELECT * FROM member WHERE id=?";
 
         try {
-            ps = con.prepareStatement(sql);
+            // PreparedStatements는 쿼리마다 새로 생성해야 오류가 안남
+            PreparedStatement ps = con.prepareStatement(sql);
 
             ps.setString(1, id);
             ResultSet rs = ps.executeQuery();
@@ -59,8 +62,8 @@ public class MemberDAO implements IDao{
     @Override
     public int insertMember(MemberDTO member) {
         try {
-
             String sql = "INSERT INTO member VALUES(member_seq.nextval, ?, ?, ?,?)";
+            PreparedStatement ps = con.prepareStatement(sql);
 
             ps.setString(1, member.getId());
             ps.setString(2, member.getPw());
@@ -71,21 +74,22 @@ public class MemberDAO implements IDao{
             exit();
 
             if (num == 1) return 1;
-            else return 0;
 
         } catch (SQLException e) {
             e.printStackTrace();
-            throw new RuntimeException(e);
         }
+        return 0;
     }
 
     @Override
     public ArrayList<MemberDTO> selectAll() {
         String sql = "SELECT * FROM member";
-        ArrayList<MemberDTO> members = new ArrayList<MemberDTO>();
+        ArrayList<MemberDTO> members = new ArrayList<>();
 
         try {
+            PreparedStatement ps = con.prepareStatement(sql);
             ResultSet rs = ps.executeQuery();
+
             while(rs.next()) {
                 MemberDTO member = new MemberDTO();
                 member.setNum(rs.getInt("num"));
@@ -105,9 +109,12 @@ public class MemberDAO implements IDao{
 
     @Override
     public int updateMember(MemberDTO member) {
-        String sql = "UPDATE member SET password = ?, email =?  WHERE id = ?";
+
         int result = 0;
         try {
+            String sql = "UPDATE member SET password = ?, email =?  WHERE id = ?";
+            PreparedStatement ps = con.prepareStatement(sql);
+
             ps.setString(1, member.getPw());
             ps.setString(2,member.getEmail());
             ps.setString(3,member.getId());
@@ -125,15 +132,18 @@ public class MemberDAO implements IDao{
 
     @Override
     public int deleteMember(String id) {
-        String sql = "DELETE FROM member WHERE id = ?";
         int result = 0;
 
         try {
+            String sql = "DELETE FROM member WHERE id = ?";
+            PreparedStatement ps = con.prepareStatement(sql);
             ps.setString(1, id);
             result = ps.executeUpdate();
+
         } catch (SQLException e) {
             e.printStackTrace();
         }
+        exit();
         return result;
     }
 
@@ -141,6 +151,9 @@ public class MemberDAO implements IDao{
         try {
             if(ps != null)
                 ps.close();
+
+            // 생성자를 통해서 연결을 닫기 떄문에 다시 부를때 커넥션이 없어서 오류가 나는거임
+//            if(con != null)
         } catch (Exception e) {
             e.printStackTrace();
         }
