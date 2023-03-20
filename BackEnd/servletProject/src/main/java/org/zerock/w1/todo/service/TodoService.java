@@ -1,6 +1,8 @@
 package org.zerock.w1.todo.service;
 
 
+import org.zerock.w1.todo.dto.TodoDTO;
+
 import java.time.LocalDate;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -11,6 +13,15 @@ public enum TodoService {
 
     public void register(TodoDTO todoDTO){
         System.out.println("DEBUG.............."+todoDTO);
+    }
+    public TodoDTO get(Long tno){
+        TodoDTO dto = new TodoDTO();
+        dto.setTno(tno);
+        dto.setTitle("Sample Todo");
+        dto.setDueDate(LocalDate.now());
+        dto.setFinished(true);
+
+        return dto;
     }
 
     public List<TodoDTO> getList(){
